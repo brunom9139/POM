@@ -36,17 +36,9 @@ public class Hook {
                     scenario.getName(),
                     new ByteArrayInputStream(((TakesScreenshot) Session.getInstance().getWebDriver()).getScreenshotAs(OutputType.BYTES))
             );
-            if (Session.getInstance().getWebDriver() != null) {
-                Session.getInstance().getWebDriver().close();
-                Session.getInstance().getWebDriver().quit();
-                Session.getInstance().removeWebDriver();
-            }
+            WebDriverManager.closeDriver();
         } catch (Exception e) {
-            if (Session.getInstance().getWebDriver() != null) {
-                Session.getInstance().getWebDriver().close();
-                Session.getInstance().getWebDriver().quit();
-                Session.getInstance().removeWebDriver();
-            }
+            WebDriverManager.closeDriver();
         }
     }
 }
