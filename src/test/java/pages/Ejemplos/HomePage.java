@@ -1,4 +1,4 @@
-package pages;
+package pages.Ejemplos;
 
 import actions.*;
 import org.openqa.selenium.By;

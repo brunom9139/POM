@@ -1,4 +1,4 @@
-package pages;
+package pages.Ejemplos;
 
 import actions.Acciones;
 import actions.Click;

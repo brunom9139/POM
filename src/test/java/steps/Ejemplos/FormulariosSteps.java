@@ -1,9 +1,9 @@
-package steps.Formularios;
+package steps.Ejemplos;
 
 import factory.WebDriverManager;
 import io.cucumber.java.es.*;
 import org.openqa.selenium.WebDriver;
-import pages.FormPage;
+import pages.Ejemplos.FormPage;
 
 public class FormulariosSteps {
     WebDriver driver = WebDriverManager.getDriver();

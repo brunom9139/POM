@@ -1,4 +1,4 @@
-package steps.Formularios;
+package steps;
 
 import factory.Session;
 import factory.WebDriverManager;

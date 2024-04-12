@@ -1,11 +1,11 @@
-package steps.Formularios;
+package steps.Ejemplos;
 
 import factory.WebDriverManager;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.openqa.selenium.WebDriver;
-import pages.HomePage;
+import pages.Ejemplos.HomePage;
 
 public class HomeSteps {
     WebDriver driver = WebDriverManager.getDriver();
