@@ -20,26 +20,6 @@ public class CheckBoxPageG {
 
     private final By casilla = By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ol[1]/li[1]/span[1]/label[1]/span[1]/*[1]");
 
-    /*
-    You have selected :
-home
-desktop
-notes
-commands
-documents
-workspace
-react
-angular
-veu
-office
-public
-private
-classified
-general
-downloads
-wordFile
-excelFile
-    * */
     public void TildarTodos(){
 
         mouse.hacerClickEnElementos(casilla);

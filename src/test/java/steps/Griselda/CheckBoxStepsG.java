@@ -19,6 +19,7 @@ public class CheckBoxStepsG {
 
     @Y("tildo todos los checkbox de hogar")
     public void tildoTodosLosCheckboxDeHogar() {
+
         objeto_check.TildarTodos();
     }
 }
