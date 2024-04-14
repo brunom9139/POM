@@ -41,5 +41,9 @@ public class HomeGriPage {
     public void ingresarEnElementos() throws Exception {
         mouse.Clickear(elementos);
     }
+    public void ingresarEnForms() throws Exception{
+        mouse.Clickear(forms);
+
+    }
 
 }

@@ -14,4 +14,9 @@ public class HomeStepG {
     public void ingresoEnElementos() throws Exception {
         obj_homeG.ingresarEnElementos();
     }
+
+    @Dado("ingreso en forms")
+    public void ingresoEnForms() throws Exception{
+        obj_homeG.ingresarEnForms();
+    }
 }
