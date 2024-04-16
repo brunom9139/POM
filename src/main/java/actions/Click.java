@@ -14,6 +14,7 @@ public class Click {
     private final EsperarHasta esperar;
     private final Acciones accion;
     private final ElementoResaltado resaltar;
+    private final ScrollToElementJavaScript scroll;
 
 
     public Click(WebDriver driver){
@@ -21,6 +22,7 @@ public class Click {
         this.esperar = new EsperarHasta(driver);
         this.accion = new Acciones(driver);
         this.resaltar = new ElementoResaltado(driver);
+        this.scroll = new ScrollToElementJavaScript(driver);
     }
 
     public void ClickearJs(By locator) throws Exception {
@@ -53,7 +55,7 @@ public class Click {
             WebElement elemento = esperar.presente(locator);
             String colorEnabled = ConfigReader.obtenerHabilitacionColor();
             if (elemento != null) {
-                accion.hacerScroll(elemento);
+                scroll.scrollLocator(locator);
                 if ("true".equalsIgnoreCase(colorEnabled)) {
                     resaltar.resaltar(elemento);
                 }

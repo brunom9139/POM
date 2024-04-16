@@ -12,12 +12,14 @@ public class Escribir {
     private final EsperarHasta esperar;
     private final Acciones accion;
     private final ElementoResaltado resaltar;
+    private final ScrollToElementJavaScript scroll;
 
     public Escribir(WebDriver driver){
         this.driver = driver;
         this.esperar = new EsperarHasta(driver);
         this.accion = new Acciones(driver);
         this.resaltar = new ElementoResaltado(driver);
+        this.scroll = new ScrollToElementJavaScript(driver);
     }
 
     public void Escribir(By locator,String texto) throws Exception {
@@ -33,7 +35,8 @@ public class Escribir {
             WebElement elemento = esperar.presente(locator);
             String colorHabilitado = ConfigReader.obtenerHabilitacionColor();
             if (elemento != null) {
-                accion.hacerScroll(elemento);
+                //accion.hacerScroll(elemento);
+                scroll.scrollLocator(locator);
                 if ("true".equalsIgnoreCase(colorHabilitado)) {
                     resaltar.resaltar(elemento);
                 }
