@@ -14,7 +14,7 @@ Característica: Estos test solo tienen click a paginas de la home de demoqa
     Entonces valido que aparece el texto "Please select an item from left to start practice."
 
 
-  @19
+  @18
   Escenario: Logeo 3
     Dado que hago click en cada input
 
