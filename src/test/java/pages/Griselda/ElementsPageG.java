@@ -24,9 +24,14 @@ public class ElementsPageG {
     //selectores
     private final By boton_text_box = By.id("item-0");
     private final By boton_check_box = By.id("item-1");
+    private final By boton_botones = By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[5]");
     //METODOS
     public void hacerClickEnCheckBox(){
         mouse.hacerClickEnElementos(boton_check_box);
     }
+    public void hacerClickEnBotones() throws Exception {
+        mouse.Clickear(boton_botones);
+    }
+
 
 }

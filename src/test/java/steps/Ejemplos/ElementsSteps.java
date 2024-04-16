@@ -1,6 +1,7 @@
 package steps.Ejemplos;
 
 import factory.WebDriverManager;
+import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Y;
 import org.openqa.selenium.WebDriver;
 import pages.Ejemplos.ElementsPage;
@@ -14,4 +15,6 @@ public class ElementsSteps {
     public void hagoClickEnTextBox() throws Exception {
         elementsObject.hacerClickEnTextBoxFormularioPaginaCompras();
     }
+
+
 }
