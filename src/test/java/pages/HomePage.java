@@ -17,7 +17,7 @@ public class HomePage {
     private final By texto_validar_elements = By.xpath("//div[text()='Please select an item from left to start practice.']");
     private final By textovalidar = By.id("Ad.Plus-970x250-1");
     private final By inputsClicks = By.tagName("input");
-    private final By butttonSeleniumOnlineTraining = By.xpath("//img[@alt='Selenium Online Training']");
+    private final By butttonSeleniumOnlineTraining = By.xpath("//img[@alt='Selenium Online Traininasdasdg']");
     private final By bottonTutorial = By.xpath("//a[@class='navbar__tutorial-menu']");
 
 

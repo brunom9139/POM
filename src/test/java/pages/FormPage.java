@@ -24,7 +24,7 @@ public class FormPage {
     }
 
     public void ingresarNombreCompleto(String name) throws Exception {
-        teclado.Escribir(full_name_xpath,name);
+        teclado.EscribirJs(full_name_xpath,name);
     }
 
     public void ingresarEmail(String email) throws Exception {

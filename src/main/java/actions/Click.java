@@ -2,7 +2,6 @@ package actions;
 
 import factory.Session;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.ConfigReader;
@@ -10,19 +9,17 @@ import utils.ConfigReader;
 import java.util.List;
 
 public class Click {
-    private final WebDriver driver;
     private final EsperarHasta esperar;
     private final Acciones accion;
     private final ElementoResaltado resaltar;
-    private final ScrollToElementJavaScript scroll;
+    private final JavaScript javaScript;
 
 
     public Click(WebDriver driver){
-        this.driver = driver;
         this.esperar = new EsperarHasta(driver);
         this.accion = new Acciones(driver);
         this.resaltar = new ElementoResaltado(driver);
-        this.scroll = new ScrollToElementJavaScript(driver);
+        this.javaScript = new JavaScript(driver);
     }
 
     public void ClickearJs(By locator) throws Exception {
@@ -55,12 +52,12 @@ public class Click {
             WebElement elemento = esperar.presente(locator);
             String colorEnabled = ConfigReader.obtenerHabilitacionColor();
             if (elemento != null) {
-                scroll.scrollLocator(locator);
+                javaScript.scrollLocator(locator);
                 if ("true".equalsIgnoreCase(colorEnabled)) {
                     resaltar.resaltar(elemento);
                 }
                 if (usarJs) {
-                    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", elemento);
+                    javaScript.click(elemento);
                 } else {
                     elemento.click();
                 }
