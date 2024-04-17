@@ -2,6 +2,15 @@
 
 Característica: Estos test solo tienen click a paginas de la home de demoqa
 
+
+  @Test @home @CajaDeTexto
+    Escenario: Entrega de datos en caja de texto
+    Dado ingreso en elementos
+    Cuando me dirijo a caja de texto
+    Y completo los campos
+    Entonces entrego los dato declarados
+
+
   @Test @home @DobleClickEnBoton
     Escenario: Verificar click doble en un boton
     Dado ingreso en elementos
