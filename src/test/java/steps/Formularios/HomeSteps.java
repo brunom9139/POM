@@ -48,4 +48,9 @@ public class HomeSteps {
     public void regresoALaVentanaPrincipal() {
         objeto_home.volverVentanaPrincipal();
     }
+
+    @Dado("que ingreso a widget")
+    public void queIngresoAWidget() throws Exception {
+        objeto_home.clickInteraccioesSostenibles();
+    }
 }

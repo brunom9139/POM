@@ -19,7 +19,8 @@ public class HomePage {
     private final By inputsClicks = By.tagName("input");
     private final By butttonSeleniumOnlineTraining = By.xpath("//img[@alt='Selenium Online Traininasdasdg']");
     private final By bottonTutorial = By.xpath("//a[@class='navbar__tutorial-menu']");
-
+    private final By btInteracciones = By.xpath("//*[contains(text(),'Interactions')]");
+    private final By btSostenible = By.xpath("//*[contains(text(),'Sortable')]");
 
     public HomePage(WebDriver driver){
         this.mouse = new Click(driver);
@@ -27,6 +28,10 @@ public class HomePage {
         this.acciones = new Acciones(driver);
         this.texto = new Texto(driver);
         this.ventana = new CambioVentana(driver);
+    }
+    public void clickInteraccioesSostenibles() throws Exception {
+        mouse.Clickear(btInteracciones);
+        mouse.Clickear(btSostenible);
     }
 
     public void hacerClickEnElementos() throws Exception {

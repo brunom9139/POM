@@ -18,6 +18,4 @@ public class ElementsPage {
     public void hacerClickEnTextBoxFormularioPaginaCompras() throws Exception {
         mouse.ClickearJs(selectorComboBoxCompras);
     }
-
-
 }

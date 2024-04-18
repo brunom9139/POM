@@ -11,7 +11,7 @@ import org.testng.annotations.*;
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         },
         glue = "steps",//indica donde encontrar las pasos con los metodos, asociadoas a los pasos de los escenarios
-        tags = "@prueba123"
+        tags = "@interacciones"
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
