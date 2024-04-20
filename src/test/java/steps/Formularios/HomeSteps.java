@@ -53,4 +53,15 @@ public class HomeSteps {
     public void queIngresoAWidget() throws Exception {
         objeto_home.clickInteraccioesSostenibles();
     }
+
+    @Dado("que me dirijo a Selectable")
+    public void queMeDirijoASelectable() throws Exception {
+        objeto_home.clickSelectable();
+    }
+
+    @Entonces("cierro todo")
+    public void cierroTodo() throws Exception {
+        objeto_home.clickSelectable();
+        objeto_home.voyAlInicio();
+    }
 }

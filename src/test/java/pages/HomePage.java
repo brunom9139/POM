@@ -21,6 +21,8 @@ public class HomePage {
     private final By bottonTutorial = By.xpath("//a[@class='navbar__tutorial-menu']");
     private final By btInteracciones = By.xpath("//*[contains(text(),'Interactions')]");
     private final By btSostenible = By.xpath("//*[contains(text(),'Sortable')]");
+    private final By btSelecTable = By.xpath("//span[contains(text(),'Selectable')]");
+    private final By btHome = By.xpath("//img[@src='/images/Toolsqa.jpg']");
 
     public HomePage(WebDriver driver){
         this.mouse = new Click(driver);
@@ -28,6 +30,13 @@ public class HomePage {
         this.acciones = new Acciones(driver);
         this.texto = new Texto(driver);
         this.ventana = new CambioVentana(driver);
+    }
+    public void voyAlInicio() throws Exception {
+        mouse.Clickear(btHome);
+    }
+    public void clickSelectable() throws Exception {
+        mouse.Clickear(btInteracciones);
+        mouse.Clickear(btSelecTable);
     }
     public void clickInteraccioesSostenibles() throws Exception {
         mouse.Clickear(btInteracciones);
