@@ -23,6 +23,7 @@ public class HomePage {
     private final By btSostenible = By.xpath("//*[contains(text(),'Sortable')]");
     private final By btSelecTable = By.xpath("//span[contains(text(),'Selectable')]");
     private final By btHome = By.xpath("//img[@src='/images/Toolsqa.jpg']");
+    private final By btBook = By.xpath("//h5[text()='Book Store Application']");
 
     public HomePage(WebDriver driver){
         this.mouse = new Click(driver);
@@ -30,6 +31,10 @@ public class HomePage {
         this.acciones = new Acciones(driver);
         this.texto = new Texto(driver);
         this.ventana = new CambioVentana(driver);
+    }
+
+    public void clickBook() throws Exception {
+        mouse.Clickear(btBook);
     }
     public void voyAlInicio() throws Exception {
         mouse.Clickear(btHome);

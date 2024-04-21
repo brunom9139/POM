@@ -21,19 +21,16 @@ public class SelectablePage {
     private final By two = By.xpath("//li[contains(text(),'Dapibus ac facilisis in')]");
     private final By three = By.xpath("//li[contains(text(),'Morbi leo risus')]");
     private final By four = By.xpath("//li[contains(text(),'Porta ac consectetur ac')]");
-    private final By oneC = By.xpath("(//li[@class='list-group-item active list-group-item-action'])[1]");
-    private final By twoC = By.xpath("(//li[@class='list-group-item active list-group-item-action'])[2]");
-    private final By threeC = By.xpath("(//li[@class='list-group-item active list-group-item-action'])[3]");
-    private final By fourC = By.xpath("(//li[@class='list-group-item active list-group-item-action'])[4]");
-    private final By fiveC  =  By.xpath("(//li[@class='list-group-item active list-group-item-action'])[5]");
-    private final By sixeC = By.xpath("(//li[@class='list-group-item active list-group-item-action'])[6]");
-    private final By sevenC = By.xpath("(//li[@class='list-group-item active list-group-item-action'])[7]");
-    private final By eightC = By.xpath("(//li[@class='list-group-item active list-group-item-action'])[8]");
-    private final By nineC = By.xpath("(//li[@class='list-group-item active list-group-item-action'])[9]");
-    private final By a = By.xpath("(//li[@class='mt-2 list-group-item active list-group-item-action'])[1]");
-    private final By e = By.xpath("(//li[@class='mt-2 list-group-item active list-group-item-action'])[2]");
-    private final By i = By.xpath("(//li[@class='mt-2 list-group-item active list-group-item-action'])[3]");
-    private final By o = By.xpath("(//li[@class='mt-2 list-group-item active list-group-item-action'])[4]");
+    private final By oneC = By.xpath("//li[contains(text(),'One')]");
+    private final By twoC = By.xpath("//li[contains(text(),'Two')]");
+    private final By threeC = By.xpath("//li[contains(text(),'Three')]");
+    private final By fourC = By.xpath("//li[contains(text(),'Four')]");
+    private final By fiveC  =  By.xpath("//li[contains(text(),'Five')]");
+    private final By sixeC = By.xpath("//li[contains(text(),'Six')]");
+    private final By sevenC = By.xpath("//li[contains(text(),'Seven')]");
+    private final By eightC = By.xpath("//li[contains(text(),'Eight')]");
+    private final By nineC = By.xpath("//li[contains(text(),'Nine')]");
+
 
     public SelectablePage(WebDriver driver){
         this.mouse = new Click(driver);
@@ -63,10 +60,10 @@ public class SelectablePage {
     }
 
     public void desckliquearList() throws Exception {
-        mouse.Clickear(a);
-        mouse.Clickear(e);
-        mouse.Clickear(i);
-        mouse.Clickear(o);
+        mouse.Clickear(one);
+        mouse.Clickear(two);
+        mouse.Clickear(three);
+        mouse.Clickear(four);
     }
     public void desclickGrid() throws Exception {
         mouse.Clickear(oneC);

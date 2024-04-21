@@ -61,7 +61,7 @@ public class HomeSteps {
 
     @Entonces("cierro todo")
     public void cierroTodo() throws Exception {
-        objeto_home.clickSelectable();
+
         objeto_home.voyAlInicio();
     }
 }

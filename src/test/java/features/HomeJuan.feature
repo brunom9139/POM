@@ -18,3 +18,11 @@
         Y voy a list y cliqueo todo
         Cuando desmarco todos los botones de grit y list
         Entonces cierro todo
+
+        @test @homeJuan @regiBiblioteca
+        Escenario: me registro en la biblioteca
+          Dado que me dirijo a biblioteca
+          Y voy a login y trato de ingresar como "juan carlos" y contraseña "12345"
+          Cuando trato de ingresar y no ingresa entonces voy a registrarme
+          Y cargo mis datos como "Juan" "Carlos" "Brito" contraseña "12345"
+          Entonces me registre y vuelvo al inicio
