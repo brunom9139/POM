@@ -27,9 +27,16 @@
           Y cargo mis datos como "Juan" "Carlos" "Brito" contraseña "12345"
           Entonces me registre y vuelvo al inicio
 
-          @test @homejuan @RecorroStory
+          @test @homeJuan @RecorroStory
             Escenario: ampliando biblioteca
             Dado que me dirijo a book store
             Y amplio las filas de mayor a menor
             Y luego busco en la biblioteca el libro "Speaking JavaScript"
             Entonces cierro todo y vuelvo a inicio
+
+          @test @homeJuan @elijoMenu
+            Escenario: elijo menu
+              Dado que me dirijo a selec menu de la targeta widgets
+              Y cargo mis opciones "soy Dr juan" "es mision"
+            Y el resto de campo "soy juanka"
+
