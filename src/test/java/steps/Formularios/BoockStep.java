@@ -45,4 +45,9 @@ public class BoockStep {
         page.meRegistro();
         page.cierroTodo();
     }
+
+    @Entonces("cierro todo y vuelvo a inicio")
+    public void cierroTodoYVuelvoAInicio() throws Exception {
+        page.cierroTodo();
+    }
 }

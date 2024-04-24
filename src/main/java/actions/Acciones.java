@@ -47,6 +47,14 @@ public class Acciones {
                 .sendKeys(Keys.ENTER)
                 .perform();
     }
+    public void clickEscribirFlechaDerechaEnter(By locator, String text){
+        Actions actions = new Actions(driver);
+        actions.click(buscar.buscarElemento(locator))
+                .sendKeys(text)
+                .sendKeys(Keys.ARROW_RIGHT)
+                .sendKeys(Keys.ENTER)
+                .perform();
+    }
 
     public void hacerDobleClick(By locator){
         Actions actions = new Actions(driver);

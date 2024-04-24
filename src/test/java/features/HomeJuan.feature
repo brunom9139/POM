@@ -26,3 +26,10 @@
           Cuando trato de ingresar y no ingresa entonces voy a registrarme
           Y cargo mis datos como "Juan" "Carlos" "Brito" contraseña "12345"
           Entonces me registre y vuelvo al inicio
+
+          @test @homejuan @RecorroStory
+            Escenario: ampliando biblioteca
+            Dado que me dirijo a book store
+            Y amplio las filas de mayor a menor
+            Y luego busco en la biblioteca el libro "Speaking JavaScript"
+            Entonces cierro todo y vuelvo a inicio
