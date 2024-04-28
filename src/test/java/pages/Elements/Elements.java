@@ -15,6 +15,7 @@ public class Elements {
     private final By locator_button_radio = By.xpath("//li[@id='item-2']/span");
     private final By locator_button_textBox = By.xpath("//li[@id='item-0']/span");
     private final By locator_button_webTables = By.xpath("//li[@id='item-3']/span");
+    private final By locator_button_Button = By.xpath("//li[@id='item-4']/span");
 
     public void clickTextBox() throws Exception {
         mouse.Clickear(locator_button_textBox);
@@ -29,6 +30,10 @@ public class Elements {
 
     public void clickWebTables() throws Exception {
         mouse.Clickear(locator_button_webTables);
+    }
+
+    public void clickButton() throws Exception {
+        mouse.Clickear(locator_button_Button);
     }
 
 }

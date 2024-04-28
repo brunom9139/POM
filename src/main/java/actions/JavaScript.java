@@ -6,11 +6,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class JavaScript {
-    private WebDriver driver;
-    private BuscarElemento buscar;
+    private final WebDriver driver;
+    private final BuscarElemento buscar;
+    private final EsperarHasta esperar;
+
     public JavaScript(WebDriver driver){
         this.driver = driver;
         this.buscar = new BuscarElemento(driver);
+        this.esperar = new EsperarHasta(driver);
     }
 
     public void scrollLocator(By locator){
@@ -22,6 +25,19 @@ public class JavaScript {
         try{
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", elemento);
         }catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    public void dobleClick(By locator)  {
+        try {
+            WebElement elemento = esperar.presente(locator);
+            JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+            jsExecutor.executeScript("var evt = document.createEvent('MouseEvents');" +
+                    "evt.initMouseEvent('dblclick',true,true,window,0,0,0,0,0,false,false,false,false,0,null);" +
+                    "arguments[0].dispatchEvent(evt);", elemento);
+        } catch (Exception e) {
             e.printStackTrace();
             throw e;
         }

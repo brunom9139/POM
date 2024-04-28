@@ -16,6 +16,7 @@ public class ElementsSteps {
     CheckBox checkBoxObj = new CheckBox(driver);
     Radio radioObj = new Radio(driver);
     WebTables webTables = new WebTables(driver);
+    Button buttonTables = new Button(driver);
 
     @Dado("que ingreso a la seccion element")
     public void queIngresoALaSeccionElement() throws Exception {
@@ -105,5 +106,20 @@ public class ElementsSteps {
     @Entonces("Se valida se edito el nombre {string} de manera correcta")
     public void seValidaSeEditoElNombreDeManeraCorrecta(String nombreEditado) throws Exception {
         webTables.validarEdicionNombreTablaWebTables(nombreEditado);
+    }
+
+    @Entonces("Se valida los siguientes mensajes {string} {string} {string}")
+    public void seValidaLosSiguientesMensajes(String validarDobleClick, String validarClickSecundario, String validarCLick) throws Exception {
+       buttonTables.validarTodosLosBotonesSessionButton(validarDobleClick,validarClickSecundario,validarCLick);
+    }
+
+    @Cuando("ingreso a la seccion Button")
+    public void ingresoALaSeccionButton() throws Exception {
+        elementsObj.clickButton();
+    }
+
+    @Y("click en los tres botones")
+    public void clickEnLosTresBotones() throws Exception {
+        buttonTables.clickearTodosLosBotonesSessionButton();
     }
 }

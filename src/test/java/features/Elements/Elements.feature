@@ -52,3 +52,10 @@ Característica: Estos test se basan en la parte Elements de demoqa
     Y busca por el nombre "Cierra"
     Y edito el nombre Cierra por "Medrano"
     Entonces Se valida se edito el nombre "Medrano" de manera correcta
+
+  @TEST
+  Escenario: Validar todos los botones de la seccion Button
+    Dado que ingreso a la seccion element
+    Cuando ingreso a la seccion Button
+    Y click en los tres botones
+    Entonces Se valida los siguientes mensajes "You have done a double click" "You have done a right click" "You have done a dynamic click"
