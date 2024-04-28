@@ -11,12 +11,12 @@ import org.testng.annotations.*;
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         },
         glue = "steps",//indica donde encontrar las pasos con los metodos, asociadoas a los pasos de los escenarios
-        tags = "@prueba123"
+        tags = "@TEST"
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
     @Override
-    @DataProvider(parallel = false)
+    @DataProvider(parallel = true)
     public Object[][] scenarios() {
         return super.scenarios();
     }

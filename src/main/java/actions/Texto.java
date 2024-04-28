@@ -17,7 +17,7 @@ public class Texto {
         this.resaltar = new ElementoResaltado(driver);
     }
 
-    public boolean compararTexto(By locator, String texto) {
+    public boolean compararTexto(By locator, String texto) throws Exception {
         try {
             WebElement elemento = driver.findElement(locator);
             String colorEnabled = ConfigReader.obtenerHabilitacionColor();
@@ -28,6 +28,26 @@ public class Texto {
                 }
                 String textoElemento = elemento.getText().trim();
                 return textoElemento.equals(texto.trim());
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    public boolean compararTextoContains(By locator, String texto) throws Exception {
+        try {
+            WebElement elemento = driver.findElement(locator);
+            String colorEnabled = ConfigReader.obtenerHabilitacionColor();
+            if (elemento != null) {
+                accion.hacerScroll(elemento);
+                if ("true".equalsIgnoreCase(colorEnabled)) {
+                    resaltar.resaltar(elemento);
+                }
+                String textoElemento = elemento.getText().trim();
+                return textoElemento.contains(texto.trim());
             } else {
                 return false;
             }

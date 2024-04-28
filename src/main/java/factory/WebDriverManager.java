@@ -15,14 +15,10 @@ public class WebDriverManager {
     private static final String navegador;
 
     static {
-        ConfigReader configReader = new ConfigReader();
         timeImplicit = ConfigReader.getTimeImplicit();
         baseUrl = ConfigReader.getBaseUrl();
         navegador = ConfigReader.getBrowser();
         System.out.println("Se cargo todas las configuraciones de configuration.properties:");
-        System.out.println(STR."app.baseurl: \{baseUrl}");
-        System.out.println(STR."app.implicitlyWait: \{timeImplicit}");
-        System.out.println(STR."app.Navegador: \{navegador}");
     }
 
     public static void initializeDriver() {
