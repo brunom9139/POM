@@ -58,10 +58,8 @@ public class HomeSteps {
     public void queMeDirijoASelectable() throws Exception {
         objeto_home.clickSelectable();
     }
-
     @Entonces("cierro todo")
     public void cierroTodo() throws Exception {
-
         objeto_home.voyAlInicio();
     }
 }

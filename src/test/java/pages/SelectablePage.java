@@ -32,6 +32,8 @@ public class SelectablePage {
     private final By nineC = By.xpath("//li[contains(text(),'Nine')]");
 
 
+
+
     public SelectablePage(WebDriver driver){
         this.mouse = new Click(driver);
     }
@@ -49,7 +51,7 @@ public class SelectablePage {
         mouse.Clickear(btTwo);
         mouse.Clickear(btOne);
     }
-    public void voiAList() throws Exception {
+    public void voyAList() throws Exception {
         mouse.Clickear(btList);
     }
     public void clickearTodoList() throws Exception {
@@ -77,5 +79,6 @@ public class SelectablePage {
         mouse.Clickear(nineC);
 
     }
+
 
 }

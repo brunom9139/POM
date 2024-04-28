@@ -16,15 +16,11 @@ public class BoockStep {
     @Dado("que me dirijo a biblioteca")
     public void queMeDirijoABiblioteca() throws Exception {
         inicio.clickBook();
-
     }
-
-
     @Y("voy a login y trato de ingresar como {string} y contraseña {string}")
-    public void voyALoginYTratoDeIngresarComoYContrasena(String arg0, String arg1) throws Exception {
+    public void voyALoginYTratoDeIngresarComoYContrasena(String usuario, String contrasenia) throws Exception {
         page.botonLogueo();
-        page.cargoForm(arg0,arg1);
-
+        page.cargoForm(usuario,contrasenia);
     }
 
 
@@ -32,9 +28,7 @@ public class BoockStep {
     public void tratoDeIngresarYNoIngresaEntoncesVoyARegistrarme() throws Exception {
         page.clickLogin();
         page.clickNewLog();
-
     }
-
     @Y("cargo mis datos como {string} {string} {string} contraseña {string}")
     public void cargoMisDatosComoContrasena(String arg0, String arg1, String arg2, String arg3) throws Exception {
         page.meRegistro(arg0,arg1,arg2,arg3);

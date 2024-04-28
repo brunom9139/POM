@@ -25,12 +25,18 @@ public class SosteniblePages {
     private final By eightT = By.xpath("(//div[@class='list-group-item list-group-item-action'])[14]");
     private final By nineT = By.xpath("(//div[@class='list-group-item list-group-item-action'])[15]");
     private final By btList = By.xpath("//*[@id='demo-tab-list']");
+    private final By btInteractio = By.xpath("//h5[text()='Interactions']");
+    private final By btSortable = By.xpath("(//*[text()='Sortable'])[1]");
 
     public SosteniblePages(WebDriver driver){
 
         this.click = new Click(driver);
         this.muevo = new ArrastrarSoltar(driver);
 
+    }
+    public void voyASortable() throws Exception {
+        click.Clickear(btInteractio);
+        click.Clickear(btSortable);
     }
     public void clickEnTodosDeLaLista() throws Exception {
         click.Clickear(oneL);

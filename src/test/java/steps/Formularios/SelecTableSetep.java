@@ -14,23 +14,21 @@ public class SelecTableSetep {
     public void voyAGrit() throws Exception {
         page.voiyAGrid();
     }
-
     @Y("cliqueo en todos los botones")
     public void cliqueoEnTodosLosBotones() throws Exception {
         page.clickInvertido();
     }
-
-    @Y("voy a list y cliqueo todo")
-    public void voyAListYCliqueoTodo() throws Exception {
-        page.voiAList();
-        page.clickearTodoList();
-    }
-
     @Cuando("desmarco todos los botones de grit y list")
     public void desmarcoTodosLosBotonesDeGritYList() throws Exception {
         page.voiyAGrid();
         page.desclickGrid();
-        page.voiAList();
+        page.voyAList();
         page.desckliquearList();
+    }
+
+    @Y("voy a list y cliqueo todo los elementos")
+    public void voyAListYCliqueoTodoLosElementos() throws Exception {
+        page.voyAList();
+        page.clickearTodoList();
     }
 }

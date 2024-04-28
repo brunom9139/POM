@@ -13,14 +13,10 @@ public class SelecMenuStep {
     public void queMeDirijoASelecMenuDeLaTargetaWidgets() throws Exception {
         page.meDirijoASelecMenu();
     }
-
-
     @Y("cargo mis opciones {string} {string}")
     public void cargoMisOpciones(String arg0, String arg1) throws Exception {
         page.escriboEnCampo(arg0,arg1);
     page.option3();
-
-
     }
 
     @Y("el resto de campo {string}")

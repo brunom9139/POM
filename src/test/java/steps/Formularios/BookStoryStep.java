@@ -10,7 +10,6 @@ import pages.BookStorePage;
 public class BookStoryStep {
     WebDriver driver = WebDriverManager.getDriver();
     BookStorePage page = new BookStorePage(driver);
-    Acciones action = new Acciones(driver);
     @Dado("que me dirijo a book store")
     public void queMeDirijoABookStore() throws Exception {
         page.voyaStore();
@@ -20,7 +19,6 @@ public class BookStoryStep {
     public void amplioLasFilasDeMayorAMenor() throws Exception {
         page.seleccionoFilas();
     }
-
     @Y("luego busco en la biblioteca el libro {string}")
     public void luegoBuscoEnLaBibliotecaElLibro(String arg0) throws Exception {
         page.buscoBook(arg0);
