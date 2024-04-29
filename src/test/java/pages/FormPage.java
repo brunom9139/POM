@@ -1,11 +1,9 @@
 package pages;
 
-import actions.Acciones;
-import actions.Click;
-import actions.Escribir;
-import actions.SubirArchivo;
+import actions.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import java.io.File;
 
@@ -14,6 +12,7 @@ public class FormPage {
     private final Escribir teclado;
     private final Acciones acciones;
     private final SubirArchivo subir;
+    private final Texto texto;
     private final By btPractiForm = By.xpath("//span[text()='Practice Form']");
     public final By firstName = By.xpath("//input[@id='firstName']");
     public final By lastName = By.xpath("//input[@id='lastName']");
@@ -39,6 +38,7 @@ public class FormPage {
         this.teclado = new Escribir(driver);
         this.acciones = new Acciones(driver);
         this.subir = new SubirArchivo(driver);
+        this.texto = new Texto(driver);
     }
     public void clickSubmid() throws Exception {
         mouse.Clickear(btSubbmid);
@@ -70,9 +70,10 @@ public class FormPage {
     public void escriboDirecction(String direccio) throws Exception {
         teclado.Escribir(address,direccio);
     }
-
-
-
+    public void validoCarga(String nombreCompleto){
+        boolean validacion = texto.compararTexto(respuesta,nombreCompleto);
+        Assert.assertTrue(validacion);
+    }
     public void hacerClickEnBotonStore(){
         acciones.hacerClick(button_store_aplicacion);
     }

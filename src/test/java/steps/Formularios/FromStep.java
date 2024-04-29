@@ -3,6 +3,7 @@ package steps.Formularios;
 import factory.WebDriverManager;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
+import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.openqa.selenium.WebDriver;
 import pages.FormPage;
@@ -29,5 +30,10 @@ public class FromStep {
     @Y("doy a SUBMIT")
     public void doyASUBMIT() throws Exception {
         page.clickSubmid();
+    }
+
+    @Entonces("valido Studen Name{string} y cierro pestania")
+    public void validoStudenNameYCierroPestania(String arg0) {
+        page.validoCarga(arg0);
     }
 }
