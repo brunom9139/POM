@@ -11,7 +11,6 @@ public class SortableStep {
     WebDriver driver = WebDriverManager.getDriver();
     SosteniblePages page = new  SosteniblePages(driver);
 
-
     @Entonces("Vuelvo a list")
     public void vuelvoAList() throws Exception {
         page.clickList();

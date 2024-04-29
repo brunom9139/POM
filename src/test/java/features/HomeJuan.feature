@@ -39,9 +39,8 @@
               Y el resto de campo "soy juanka"
 
               @test @homeJuan @cargoForm
-              Escenario: Cargo mis datos en el formulario
+              Escenario: Cargo mis datos en el formulario practica
               Dado me dirijo al formulario
-              Y cargo mis datos "Juan" "Carlos" y mi correo "asdf@gmail.com"
-              Y numero de telefono "381234567" y el resto de datos mios
-              Y cargo mi archivo y subo
+              Y cargo mis datos "Juan" "Carlos" y mi fontello "381234567" correo "qwert@gmail.com"
+              Y "direccion" cargo mi archivo y subo "C:\Users\Juan Carlos\Pictures\motos\ybr azul.jpg"
 

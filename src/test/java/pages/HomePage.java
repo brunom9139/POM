@@ -24,6 +24,9 @@ public class HomePage {
     private final By btSelecTable = By.xpath("//span[contains(text(),'Selectable')]");
     private final By btHome = By.xpath("//img[@src='/images/Toolsqa.jpg']");
     private final By btBook = By.xpath("//h5[text()='Book Store Application']");
+    private final By btElements = By.xpath("//h5[text()='Elements']");
+    private final By btForm = By.xpath("//h5[text()='Forms']");
+
 
     public HomePage(WebDriver driver){
         this.mouse = new Click(driver);
@@ -31,6 +34,12 @@ public class HomePage {
         this.acciones = new Acciones(driver);
         this.texto = new Texto(driver);
         this.ventana = new CambioVentana(driver);
+    }
+    public void clickFrom() throws Exception {
+        mouse.Clickear(btForm);
+    }
+    public void clickElements() throws Exception {
+        mouse.Clickear(btElements);
     }
 
     public void clickBook() throws Exception {
