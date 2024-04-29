@@ -1,27 +1,33 @@
 package steps.Formularios;
 
 import factory.WebDriverManager;
+import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Y;
 import org.openqa.selenium.WebDriver;
 import pages.FormPage;
 import pages.HomePage;
 
-public class StepForm {
+public class FromStep {
     WebDriver driver = WebDriverManager.getDriver();
     HomePage inicio = new HomePage(driver);
     FormPage page = new FormPage(driver);
+
     @Dado("me dirijo al formulario")
     public void meDirijoAlFormulario() throws Exception {
         inicio.clickFrom();
         page.clickParticipeFrom();
     }
-
-
-    @Y("cargo mis datos {string} {string} y mi fontello {string} correo {string}")
-    public void cargoMisDatosYMiFontelloCorreo(String arg0, String arg1, String arg2, String arg3) throws Exception {
-        page.cargoNombre2NombreSexoNumeroTel(arg0,arg1,arg2);
-        page.ingresarEmail(arg3);
+    @Cuando("cargo mis datos {string} {string} {string} {string} {string} {string} {string}")
+    public void cargoMisDatos(String arg0, String arg1, String arg2, String arg3, String arg4, String arg5, String arg6) throws Exception {
+        page.cargoNombre2NombreSexoNumeroTel(arg0,arg1,arg2,arg3);
         page.cargoFecha();
+        page.escriboDirecction(arg4);
+        page.estadoYCIudad(arg4,arg5);
+    }
+
+    @Y("doy a SUBMIT")
+    public void doyASUBMIT() throws Exception {
+        page.clickSubmid();
     }
 }

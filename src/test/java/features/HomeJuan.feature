@@ -41,6 +41,7 @@
               @test @homeJuan @cargoForm
               Escenario: Cargo mis datos en el formulario practica
               Dado me dirijo al formulario
-              Y cargo mis datos "Juan" "Carlos" y mi fontello "381234567" correo "qwert@gmail.com"
-              Y "direccion" cargo mi archivo y subo "C:\Users\Juan Carlos\Pictures\motos\ybr azul.jpg"
+              Cuando cargo mis datos "Juan" "Carlos" "djjuankalexis15@gmail.com" "1234567899" "Alderetes" "Tucuman" "Alderetes"
+              Y doy a SUBMIT
+              Entonces valido Studen Name"Juan Carlos" y cierro pestania
 
