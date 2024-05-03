@@ -41,7 +41,7 @@ public class MisTestJuanStep {
     }
 
     @Entonces("Verifico el mensaje {string}")
-    public void verificoElMensaje(String arg0) throws Exception {
+    public void verificoElMensaje(String arg0) throws Exception {mal
         page_Alert_Browser.mensajeCompruebo(arg0);
         ventana.cerrarVentanaActual();
     }

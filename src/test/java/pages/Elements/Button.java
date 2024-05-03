@@ -18,7 +18,6 @@ public class Button {
         this.texto = new Texto(driver);
         this.acciones = new Acciones(driver);
         this.javaScript = new JavaScript(driver);
-
     }
 
     private final By locator_button_doble_click = By.id("doubleClickBtn");

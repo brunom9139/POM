@@ -1,6 +1,6 @@
 package pages.Elements;
 
-import actions.CambioVentana;
+import actions.CambioVentana;mal
 import actions.Click;
 import actions.Escribir;
 import actions.Texto;
@@ -10,18 +10,20 @@ import org.testng.Assert;
 
 public class Alerts {
     private final Click mouse;
-    private final Escribir teclado;
+    private final Escribir teclado;mal
     private final Texto texto;
     private final By bt_one = By.xpath("(//button[@class='btn btn-primary'])[1]");
     private final By bt_two = By.xpath("(//button[@class='btn btn-primary'])[2]");
     private final By bt_tree = By.xpath("(//button[@class='btn btn-primary'])[3]");
     private final By bt_four = By.xpath("(//button[@class='btn btn-primary'])[4]");
     private final By verifico = By.xpath("//span[text()='Juan Carlos']");
+
     public Alerts(WebDriver driver){
         this.mouse = new Click(driver);
         this.teclado = new Escribir(driver);
         this.texto = new Texto(driver);
     }
+
     public void clickPrimerBt() throws Exception {
         mouse.Clickear(bt_one);
     }

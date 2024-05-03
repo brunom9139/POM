@@ -10,7 +10,7 @@ import org.testng.Assert;
 public class BrowserWindows {
     private final Click mouse;
     private final Texto texto;
-    private final CambioVentana ventana;
+    private final CambioVentana ventana;mal
     public BrowserWindows(WebDriver driver){
         this.mouse = new Click(driver);
         this.ventana = new CambioVentana(driver);

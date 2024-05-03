@@ -22,10 +22,10 @@ public class AlertsFrameyWindowsPage {
     public void clickAler() throws Exception {
         mouse.Clickear(locator_button_alert);
     }
-    public void clickFrame() throws Exception {
+    public void clickFrame() throws Exception {mal
         mouse.Clickear(locator_button_framen);
     }
-    public void clickNestedFrames() throws Exception {
+    public void clickNestedFrames() throws Exception {mal
         mouse.Clickear(locator_button_nested_frames);
     }
     public void clickModalsDialogs() throws Exception {
