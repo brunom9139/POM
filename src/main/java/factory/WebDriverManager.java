@@ -15,14 +15,10 @@ public class WebDriverManager {
     private static final String navegador;
 
     static {
-        ConfigReader configReader = new ConfigReader();
         timeImplicit = ConfigReader.getTimeImplicit();
         baseUrl = ConfigReader.getBaseUrl();
         navegador = ConfigReader.getBrowser();
         System.out.println("Se cargo todas las configuraciones de configuration.properties:");
-        System.out.println(STR."app.baseurl: \{baseUrl}");
-        System.out.println(STR."app.implicitlyWait: \{timeImplicit}");
-        System.out.println(STR."app.Navegador: \{navegador}");
     }
 
     public static void initializeDriver() {
@@ -59,9 +55,13 @@ public class WebDriverManager {
 
     public static void closeDriver(){
         if (Session.getInstance().getWebDriver() != null) {
-            Session.getInstance().getWebDriver().close();
-            Session.getInstance().getWebDriver().quit();
-            Session.getInstance().removeWebDriver();
+            try {
+                Session.getInstance().getWebDriver().quit();
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                Session.getInstance().removeWebDriver();
+            }
         }
     }
 

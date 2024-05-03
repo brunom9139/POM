@@ -17,7 +17,7 @@ public class ConfigReader {
             if (inputStream != null) {
                 properties.load(inputStream);
             } else {
-                logger.log(Level.SEVERE, STR."Cannot find config file: \{CONFIG_FILE}");
+                logger.log(Level.SEVERE, "Cannot find config file: " + CONFIG_FILE);
             }
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error loading config file", e);
@@ -34,7 +34,7 @@ public class ConfigReader {
             ConfigReader configReader = new ConfigReader();
             return Integer.parseInt(configReader.getProperty("app.implicitlyWait"));
         } catch (NumberFormatException e) {
-            logger.log(Level.WARNING, STR."Invalid implicitlyWait value. Using default value: \{defaultValue}", e);
+            logger.log(Level.WARNING, "Invalid implicitlyWait value. Using default value: " + defaultValue, e);
             return defaultValue;
         }
     }

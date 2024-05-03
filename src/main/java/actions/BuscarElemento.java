@@ -17,7 +17,7 @@ public class BuscarElemento {
         try {
             return driver.findElement(locator);
         }catch (NoSuchElementException e){
-            throw new ElementoNoEncontradoException(STR."Elemento no encontrado: \{locator.toString()}", e);
+            throw new ElementoNoEncontradoException("Elemento no encontrado: " + locator.toString(), e);
         }
     }
 }

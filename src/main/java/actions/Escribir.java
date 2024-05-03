@@ -1,6 +1,5 @@
 package actions;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -8,18 +7,15 @@ import utils.ConfigReader;
 
 
 public class Escribir {
-    private final WebDriver driver;
     private final EsperarHasta esperar;
-    private final Acciones accion;
     private final ElementoResaltado resaltar;
-    private final ScrollToElementJavaScript scroll;
+    private final JavaScript javaScript;
+
 
     public Escribir(WebDriver driver){
-        this.driver = driver;
         this.esperar = new EsperarHasta(driver);
-        this.accion = new Acciones(driver);
         this.resaltar = new ElementoResaltado(driver);
-        this.scroll = new ScrollToElementJavaScript(driver);
+        this.javaScript = new JavaScript(driver);
     }
 
     public void Escribir(By locator,String texto) throws Exception {
@@ -30,19 +26,18 @@ public class Escribir {
         escribirTexto(locator,texto, true);
     }
 
-    public void escribirTexto(By locator, String texto, boolean usarJs) {
+    private void escribirTexto(By locator, String texto, boolean usarJs) {
         try {
             WebElement elemento = esperar.presente(locator);
             String colorHabilitado = ConfigReader.obtenerHabilitacionColor();
             if (elemento != null) {
-                //accion.hacerScroll(elemento);
-                scroll.scrollLocator(locator);
+                javaScript.scrollLocator(locator);
                 if ("true".equalsIgnoreCase(colorHabilitado)) {
                     resaltar.resaltar(elemento);
                 }
                 if (usarJs) {
-                    ((JavascriptExecutor) driver).executeScript("arguments[0].value = '';", elemento);
-                    ((JavascriptExecutor) driver).executeScript("arguments[0].value = arguments[1];", elemento, texto);
+                    javaScript.limpiar(elemento);
+                    javaScript.escribir(elemento,texto);
                 } else {
                     elemento.clear();
                     elemento.sendKeys(texto);
