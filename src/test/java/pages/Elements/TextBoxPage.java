@@ -5,12 +5,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class TextBox {
+public class TextBoxPage {
     private final Click mouse;
     private final Escribir teclado;
     private final Texto texto;
 
-    public TextBox(WebDriver driver){
+    public TextBoxPage(WebDriver driver){
         this.mouse = new Click(driver);
         this.teclado = new Escribir(driver);
         this.texto = new Texto(driver);
@@ -32,7 +32,7 @@ public class TextBox {
     }
 
     public void validarCargaFormularioTextBoxElements(String fullName)throws Exception {
-        boolean validacion = texto.compararTextoContains(locator_label_name_validar_carga_formulario,fullName);
+        boolean validacion = texto.compararTextoContiene(locator_label_name_validar_carga_formulario,fullName);
         Assert.assertTrue(validacion);
     }
 

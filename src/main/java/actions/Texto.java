@@ -17,7 +17,7 @@ public class Texto {
         this.resaltar = new ElementoResaltado(driver);
     }
 
-    public boolean compararTexto(By locator, String texto) throws Exception {
+    public boolean compararTextoIgual(By locator, String texto) throws Exception {
         try {
             WebElement elemento = driver.findElement(locator);
             String colorEnabled = ConfigReader.obtenerHabilitacionColor();
@@ -37,7 +37,7 @@ public class Texto {
         }
     }
 
-    public boolean compararTextoContains(By locator, String texto) throws Exception {
+    public boolean compararTextoContiene(By locator, String texto) throws Exception {
         try {
             WebElement elemento = driver.findElement(locator);
             String colorEnabled = ConfigReader.obtenerHabilitacionColor();

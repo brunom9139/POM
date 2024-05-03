@@ -55,9 +55,13 @@ public class WebDriverManager {
 
     public static void closeDriver(){
         if (Session.getInstance().getWebDriver() != null) {
-            Session.getInstance().getWebDriver().close();
-            Session.getInstance().getWebDriver().quit();
-            Session.getInstance().removeWebDriver();
+            try {
+                Session.getInstance().getWebDriver().quit();
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                Session.getInstance().removeWebDriver();
+            }
         }
     }
 

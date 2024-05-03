@@ -5,10 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class CheckBox {
+public class CheckBoxPage {
     private final Click mouse;
     private final Texto texto;
-    public CheckBox(WebDriver driver){
+    public CheckBoxPage(WebDriver driver){
         this.mouse = new Click(driver);
         this.texto = new Texto(driver);
     }
@@ -23,7 +23,7 @@ public class CheckBox {
     }
 
     public void validarTextCheckBox(String youHaveSelected)throws Exception {
-        boolean validacion = texto.compararTextoContains(locator_validar_resultado_check_box,youHaveSelected);
+        boolean validacion = texto.compararTextoContiene(locator_validar_resultado_check_box,youHaveSelected);
         Assert.assertTrue(validacion);
     }
 }

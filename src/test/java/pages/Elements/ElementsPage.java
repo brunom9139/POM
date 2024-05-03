@@ -4,10 +4,10 @@ import actions.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class Elements {
+public class ElementsPage {
     private final Click mouse;
 
-    public Elements(WebDriver driver){
+    public ElementsPage(WebDriver driver){
         this.mouse = new Click(driver);
     }
 

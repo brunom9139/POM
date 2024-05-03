@@ -10,13 +10,13 @@ import pages.Elements.*;
 
 public class ElementsSteps {
     WebDriver driver = WebDriverManager.getDriver();
-    Main mainsObj = new Main(driver);
-    Elements elementsObj = new Elements(driver);
-    TextBox textBoxObj = new TextBox(driver);
-    CheckBox checkBoxObj = new CheckBox(driver);
-    Radio radioObj = new Radio(driver);
-    WebTables webTables = new WebTables(driver);
-    Button buttonTables = new Button(driver);
+    MainPage mainsObj = new MainPage(driver);
+    ElementsPage elementsObj = new ElementsPage(driver);
+    TextBoxPage textBoxObj = new TextBoxPage(driver);
+    CheckBoxPage checkBoxObj = new CheckBoxPage(driver);
+    RadioPage radioObj = new RadioPage(driver);
+    WebTablesPage webTables = new WebTablesPage(driver);
+    ButtonPage buttonTables = new ButtonPage(driver);
 
     @Dado("que ingreso a la seccion element")
     public void queIngresoALaSeccionElement() throws Exception {

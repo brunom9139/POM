@@ -5,12 +5,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class WebTables {
+public class WebTablesPage {
     private final Escribir teclado;
     private final Texto texto;
     private final Click mouse;
 
-    public WebTables(WebDriver driver){
+    public WebTablesPage(WebDriver driver){
         this.teclado = new Escribir(driver);
         this.texto = new Texto(driver);
         this.mouse = new Click(driver);
@@ -26,12 +26,12 @@ public class WebTables {
 
 
     public void validarElementoBuscadoEnWebPage(String fullName)throws Exception {
-        boolean validacion = texto.compararTextoContains(locator_label_validar_elemento_buscado,fullName);
+        boolean validacion = texto.compararTextoContiene(locator_label_validar_elemento_buscado,fullName);
         Assert.assertTrue(validacion);
     }
 
     public void validarQueAparezcaElMensajeNoNoRowsFound(String validarMensajeNorowsfound)throws Exception {
-        boolean validacion = texto.compararTextoContains(locator_label_validar_eliminacion_de_registros,validarMensajeNorowsfound);
+        boolean validacion = texto.compararTextoContiene(locator_label_validar_eliminacion_de_registros,validarMensajeNorowsfound);
         Assert.assertTrue(validacion);
     }
 
@@ -50,7 +50,7 @@ public class WebTables {
     }
 
     public void validarEdicionNombreTablaWebTables(String validarMensajeNorowsfound)throws Exception {
-        boolean validacion = texto.compararTextoContains(locator_label_validar_elemento_buscado,validarMensajeNorowsfound);
+        boolean validacion = texto.compararTextoContiene(locator_label_validar_elemento_buscado,validarMensajeNorowsfound);
         Assert.assertTrue(validacion);
     }
 

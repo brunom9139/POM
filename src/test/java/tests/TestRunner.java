@@ -4,6 +4,8 @@ import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.testng.annotations.*;
 
+import java.io.IOException;
+
 @Test
 @CucumberOptions(
         features = "src/test/java/features",//donde estara lo que se debe ejecutar
@@ -19,5 +21,15 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     @DataProvider(parallel = true)
     public Object[][] scenarios() {
         return super.scenarios();
+    }
+
+    @AfterSuite
+    public void EliminarChrome() throws Exception {
+        try {
+            Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe");
+            Runtime.getRuntime().exec("taskkill /F /IM chrome.exe");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

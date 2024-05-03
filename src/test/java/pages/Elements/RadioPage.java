@@ -5,11 +5,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class Radio {
+public class RadioPage {
     private final Click mouse;
     private final Texto texto;
 
-    public Radio(WebDriver driver){
+    public RadioPage(WebDriver driver){
         this.mouse = new Click(driver);
         this.texto = new Texto(driver);
     }
@@ -27,7 +27,7 @@ public class Radio {
     }
 
     public void validarCargaFormularioTextBoxElements(String fullName)throws Exception {
-        boolean validacion = texto.compararTextoContains(locator_label_validar_seleccion_radio,fullName);
+        boolean validacion = texto.compararTextoContiene(locator_label_validar_seleccion_radio,fullName);
         Assert.assertTrue(validacion);
     }
 }
