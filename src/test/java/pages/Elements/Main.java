@@ -15,7 +15,7 @@ public class Main {
     private final By locator_button_alert = By.xpath("//h5[text()='Alerts, Frame & Windows']");
 
 
-    public void clickAlert() throws Exception {
+    public void clickAlertFrameWindows() throws Exception {
         mouse.Clickear(locator_button_alert);
     }
     public void clickElements() throws Exception {

@@ -15,3 +15,12 @@
       Cuando estoy en la pagina Alert
       Y cliqueo todo los botones azules y cargo mi nombre en el ultimo "Juan Carlos"
       Entonces verifico la carga del nombre que cargue previamente "Juan Carlos"
+
+    @test @MisTest @mensajes
+    Escenario: Ventanas con dialogos largos y pequeños
+      Dado que me dirijo a Frame & Windows
+      Cuando estoy en la pagina Modals Dialogs Hago click en Smash Modals
+      Y verifico el mensaje del primer renglon "Small Modal"
+      Cuando hago click en Large Modals
+      Y verifico el mensje del primer renglon "Large Modal"
+      Entonces las verificaciones fueron aprovadas

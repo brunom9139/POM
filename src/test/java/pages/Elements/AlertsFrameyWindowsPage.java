@@ -14,6 +14,8 @@ public class AlertsFrameyWindowsPage {
     private final By locator_button_browser_Windows = By.xpath("//span[text()='Browser Windows']");
     private final By locator_button_alert = By.xpath("//span[text()='Alerts']");
     private final By locator_button_framen = By.xpath("//span[text()='Text Box']");
+    private final By locator_button_nested_frames = By.xpath("//span[contains(text(),'Nested Frames')]");
+    private final By locator__button_modal_dialogs = By.xpath("//span[contains(text(),'Modal Dialogs')]");
     public void clickBrowser() throws Exception {
         mouse.Clickear(locator_button_browser_Windows);
     }
@@ -22,5 +24,11 @@ public class AlertsFrameyWindowsPage {
     }
     public void clickFrame() throws Exception {
         mouse.Clickear(locator_button_framen);
+    }
+    public void clickNestedFrames() throws Exception {
+        mouse.Clickear(locator_button_nested_frames);
+    }
+    public void clickModalsDialogs() throws Exception {
+        mouse.Clickear(locator__button_modal_dialogs);
     }
 }

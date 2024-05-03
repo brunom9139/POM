@@ -8,27 +8,26 @@ import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.openqa.selenium.WebDriver;
-import pages.Elements.Alerts;
-import pages.Elements.AlertsFrameyWindowsPage;
-import pages.Elements.BrowserWindows;
-import pages.Elements.Main;
+import pages.Elements.*;
 
 public class MisTestJuanStep {
     WebDriver driver = WebDriverManager.getDriver();
     Main inicio = new Main(driver);
-    AlertsFrameyWindowsPage pageAlert = new AlertsFrameyWindowsPage(driver);
+    AlertsFrameyWindowsPage page_Alert_FrameWindows = new AlertsFrameyWindowsPage(driver);
     BrowserWindows page_Alert_Browser = new BrowserWindows(driver);
     CambioVentana ventana = new CambioVentana(driver);
     Alerts page_Alert = new Alerts(driver);
     EsperarTiempo tiempo = new EsperarTiempo();
+    ModalsDialogs pag_eModals = new ModalsDialogs(driver);
     @Dado("que me dirijo a Frame & Windows")
     public void queMeDirijoAFrameWindows() throws Exception {
-        inicio.clickAlert();
+        inicio.clickAlertFrameWindows();
+        page_Alert_FrameWindows.clickModalsDialogs();
     }
 
     @Cuando("Estoy en Browser Windows")
     public void estoyEnBrowserWindows() throws Exception {
-        pageAlert.clickBrowser();
+        page_Alert_FrameWindows.clickBrowser();
 
     }
 
@@ -49,7 +48,7 @@ public class MisTestJuanStep {
 
     @Cuando("estoy en la pagina Alert")
     public void estoyEnLaPaginaAlert() throws Exception {
-        pageAlert.clickAler();
+        page_Alert_FrameWindows.clickAler();
     }
 
     @Y("cliqueo todo los botones azules y cargo mi nombre en el ultimo {string}")
@@ -69,5 +68,30 @@ public class MisTestJuanStep {
     @Entonces("verifico la carga del nombre que cargue previamente {string}")
     public void verificoLaCargaDelNombreQueCarguePreviamente(String nombreValido) throws Exception {
         page_Alert.validoTexto(nombreValido);
+    }
+
+    @Cuando("estoy en la pagina Modals Dialogs Hago click en Smash Modals")
+    public void estoyEnLaPaginaModalsDialogsHagoClickEnSmashModals() throws Exception {
+        pag_eModals.clickBTsmash();
+    }
+
+    @Y("verifico el mensaje del primer renglon {string}")
+    public void verificoElMensajeDelPrimerRenglon(String mensaje) throws Exception {
+        pag_eModals.verificoTextEnSmallModals(mensaje);
+    }
+
+    @Cuando("hago click en Large Modals")
+    public void hagoClickEnLargeModals() throws Exception {
+        pag_eModals.clickBTlarge();
+    }
+
+    @Y("verifico el mensje del primer renglon {string}")
+    public void verificoElMensjeDelPrimerRenglon(String mensaje) throws Exception {
+        pag_eModals.verificoTextoEnLargeModals(mensaje);
+    }
+
+    @Entonces("las verificaciones fueron aprovadas")
+    public void lasVerificacionesFueronAprovadas() throws Exception {
+        page_Alert_FrameWindows.clickModalsDialogs();
     }
 }
