@@ -48,18 +48,4 @@ public class HomeSteps {
     public void regresoALaVentanaPrincipal() {
         objeto_home.volverVentanaPrincipal();
     }
-
-    @Dado("que ingreso a widget")
-    public void queIngresoAWidget() throws Exception {
-        objeto_home.clickInteraccioesSostenibles();
-    }
-
-    @Dado("que me dirijo a Selectable")
-    public void queMeDirijoASelectable() throws Exception {
-        objeto_home.clickSelectable();
-    }
-    @Entonces("cierro todo")
-    public void cierroTodo() throws Exception {
-        objeto_home.voyAlInicio();
-    }
 }

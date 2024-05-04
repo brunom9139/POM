@@ -15,6 +15,11 @@ public class Acciones {
         this.buscar = new BuscarElemento(driver);
     }
 
+    public void Tab(){
+        Actions actions = new Actions(driver);
+        actions.keyDown(Keys.TAB).perform();
+    }
+
     public void hacerClick(By locator){
         Actions actions = new Actions(driver);
         scrollElemento(locator, actions).click().perform();

@@ -13,7 +13,7 @@ import java.time.Duration;
 public class EsperarHasta {
     private final WebDriver driver;
 
-    public EsperarHasta(WebDriver driver) {//CONSTRUCTOR
+    public EsperarHasta(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -29,7 +29,7 @@ public class EsperarHasta {
 
             elemento = driver.findElement(locator);
         } catch (TimeoutException e) {
-            System.out.println(STR."Tiempo de espera agotado para el elemento con locator: \{locator.toString()}");
+            System.out.println("Tiempo de espera agotado para el elemento con locator: " + locator.toString());
         }
         return elemento;
     }
