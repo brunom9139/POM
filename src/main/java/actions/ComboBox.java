@@ -25,6 +25,10 @@ public class ComboBox {
         seleccionarOpcion(locator, textoVisible, TipoSeleccion.TEXTO_VISIBLE);
     }
 
+    public void seleccionarPorIndex(By locator, String index) throws Exception {
+        seleccionarOpcion(locator, index, TipoSeleccion.INDEX);
+    }
+
     private void seleccionarOpcion(By locator, String opcion, TipoSeleccion tipo) throws Exception {
         try {
             WebElement elemento = esperar.presente(locator);
