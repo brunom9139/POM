@@ -3,6 +3,7 @@ package steps.Login;
 import factory.WebDriverManager;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
+import io.cucumber.java.es.Y;
 import org.openqa.selenium.WebDriver;
 import pages.LoginPage.LogueoPage;
 import pages.PrincipalPage.PrincipalPage;
@@ -31,4 +32,17 @@ public class LogueoStep {
         page_logueo.validarCredencialesInvalidasLogeo(credencialesInvalidas);
 
     }
+
+    @Y("me deslogueo")
+    public void meDeslogueo() throws Exception {
+        page_logueo.cerrarSesion();
+        
+    }
+
+    @Entonces("verifico que me deslogueo con el texto {string}")
+    public void verificoQueMeDeslogueoConElTexto(String mensaje) throws Exception {
+        page_logueo.validoTexto(mensaje);
+    }
+
+
 }

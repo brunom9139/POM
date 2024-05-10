@@ -52,6 +52,27 @@ public class Acciones {
                 .sendKeys(Keys.ENTER)
                 .perform();
     }
+    public void flechaAbajoDoble(){
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
+    }
+    public void clickFlechaAbajoDoble(By locator){
+        Actions actions = new Actions(driver);
+        //actions.click(buscar.buscarElemento(locator))
+        scrollElemento(locator, actions).click()
+                .sendKeys(Keys.ARROW_DOWN)
+                .sendKeys(Keys.ARROW_DOWN)
+                .sendKeys(Keys.ENTER)
+                .perform();
+    }
+    //puede mejorarse
+    public void clickFlechaAbajo(By locator){
+        Actions actions = new Actions(driver);
+        actions.click(buscar.buscarElemento(locator))
+                .sendKeys(Keys.ARROW_DOWN)
+                .sendKeys(Keys.ENTER)
+                .perform();
+    }
 
     public void hacerDobleClick(By locator){
         Actions actions = new Actions(driver);

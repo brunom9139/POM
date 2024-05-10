@@ -1,9 +1,13 @@
 package actions;
 
+import factory.Session;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.ConfigReader;
+
+import java.util.List;
+import java.util.Objects;
 
 public class Texto {
 
@@ -16,6 +20,7 @@ public class Texto {
         this.accion = new Acciones(driver);
         this.resaltar = new ElementoResaltado(driver);
     }
+
 
     public boolean compararTextoIgual(By locator, String texto) throws Exception {
         try {
