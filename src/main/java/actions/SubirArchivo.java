@@ -30,6 +30,7 @@ public class SubirArchivo {
      * File file = new File("C:\\archivos\\archivo_prueba.txt");
      * SubirArchivo uploader = new SubirArchivo(driver);
      * uploader.subir(fileUploadLocator, file);
+     * ejemplo de uso subir_archivo.subir(locator_file_submit, new File("C:\\Users\\NEW GAME\\OneDrive\\Escritorio\\Nuevo documento de texto.txt"));
      * @throws Exception si ocurre algún error durante el proceso de subida del archivo.
      */
     public void subir(By locator, File archivo) throws Exception {
