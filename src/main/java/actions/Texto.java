@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.ConfigReader;
 
+import java.util.List;
+
 public class Texto {
 
     private final WebDriver driver;
@@ -56,4 +58,33 @@ public class Texto {
             throw e;
         }
     }
+
+    public boolean validarSiTextoSeEncontro(By locator, String texto)throws Exception {
+        boolean encuentra = false;
+        List<WebElement> elements = driver.findElements(locator);
+        for (WebElement element : elements) {
+            if(element.getText() == texto){
+                encuentra = true;
+                break;
+            }
+        }
+        return encuentra;
+
+        /*boolean encuentra = false;
+        try {
+            // Encontrar elementos usando el locator proporcionado
+            List<WebElement> elements = driver.findElements(locator);
+
+            // Utilizar stream y anyMatch para verificar si algún elemento coincide con el texto
+            encuentra = elements.stream()
+                    .map(WebElement::getText)
+                    .anyMatch(elementText -> elementText.equals(texto));
+
+        } catch (Exception e) {
+            // Manejar posibles excepciones
+            e.printStackTrace();
+        }
+        return encuentra;*/
+    }
+
 }
