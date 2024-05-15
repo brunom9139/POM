@@ -1,6 +1,7 @@
 package steps.JobStep;
 
 import factory.WebDriverManager;
+import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.openqa.selenium.WebDriver;
@@ -40,4 +41,31 @@ public class JobSteps {
         job_objeto.asdasdasd();
     }
 
+
+    @Cuando("voy a job title")
+    public void voyAJobTitle() throws Exception {
+        job_objeto.clickJobTitle();
+    }
+
+    @Entonces("compruebo la coincidencia de los Job Description y Records Found")
+    public void comprueboLaCoincidenciaDeLosJobDescriptionYRecordsFound() throws Exception {
+        job_objeto.cantidadJobDescription();
+    }
+
+    @Cuando("voy a job title y hago clicks en la lista de Jab Titles")
+    public void voyAJobTitleYHagoClicksEnLaListaDeJabTitles() throws Exception {
+        job_objeto.clickTodosLosChecks();
+    }
+
+
+    @Cuando("voy a job paygrades")
+    public void voyAJobPaygrades() throws Exception {
+        job_objeto.clickEnPayGrades();
+
+    }
+
+    @Y("edito todos los registros de paygrades")
+    public void editoTodosLosRegistrosDePaygrades() throws Exception {
+        job_objeto.editarRegistrosPayGrades();
+    }
 }
