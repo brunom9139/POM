@@ -56,6 +56,11 @@ public class JobPage {
     //strings para armar selectores body table
     private final String table_row = "//div[@class='oxd-table-row oxd-table-row--with-border']";
 
+    private final By locator_ordenamiento = By.xpath("//i[@class='oxd-icon bi-sort-alpha-down oxd-icon-button__icon oxd-table-header-sort-icon']");
+    private final By locator_ordenamiento_descendente = By.xpath("(//li[@class='oxd-table-header-sort-dropdown-item'])[2]");
+    private final By locator_ordenamiento_ascendente = By.xpath("(//li[@class='oxd-table-header-sort-dropdown-item'])[1]");
+
+
     public void clickEnJob() throws Exception {
         mouse.Clickear(locator_button_job);
 
@@ -198,6 +203,17 @@ public class JobPage {
     public void buscarEstadoAgreado(String estado_agregado){
         //tengo que recorrer la lista hasta que lo encuentre,sino devuelve error
 
+    }
+
+    public void ordenarAscendentemente() throws Exception {
+        accion.hacerScroll(locator_ordenamiento);
+        mouse.ClickearJs(locator_ordenamiento);
+        mouse.ClickearJs(locator_ordenamiento_ascendente);
+    }
+    public void ordenarDesscendentemente() throws Exception {
+        accion.hacerScroll(locator_ordenamiento);
+        mouse.ClickearJs(locator_ordenamiento);
+        mouse.ClickearJs(locator_ordenamiento_descendente);
     }
 
 }

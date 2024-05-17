@@ -135,3 +135,18 @@ Característica: Estos son los test de Admin
     Y voy a Job Categories
     Entonces borro la posicion 3
 
+  @Test @Admin @OrdenarDeFormaDescendenteJobTitles
+  Escenario: Se ordena de forma descendente todos los titulos
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Cuando ingreso en job
+    Y voy a job title
+    Entonces ordenar en forma descendente
+
+  @Test @Admin @OrdenarDeFormaAscendenteJobTitles
+  Escenario: Se ordena de forma descendente todos los titulos
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Cuando ingreso en job
+    Y voy a job title
+    Entonces ordenar en forma ascendente

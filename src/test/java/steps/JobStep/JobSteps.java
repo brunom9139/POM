@@ -130,4 +130,18 @@ public class JobSteps {
     @Entonces("verifico que aparezca en la lista {string}")
     public void verificoQueAparezcaEnLaLista(String estado_agregado) {
     }
+
+    @Entonces("ordenar en forma descendente")
+    public void clickEnOrdenarEnFormaDescendente() throws Exception {
+        job_objeto.ordenarDesscendentemente();
+    }
+
+    @Entonces("ordenar en forma ascendente")
+    public void clickEnOrdenarEnFormaAscendente() throws Exception {
+        job_objeto.ordenarAscendentemente();
+    }
+
+    @Entonces("borro la posicion {int}")
+    public void borroLaPosicion(int arg0) {
+    }
 }
