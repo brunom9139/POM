@@ -13,7 +13,7 @@ import java.io.IOException;
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         },
         glue = "steps",//indica donde encontrar las pasos con los metodos, asociadoas a los pasos de los escenarios
-        tags = "@PayGrade"
+        tags = "@AgregarPayGrade"
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
@@ -33,5 +33,4 @@ public class TestRunner extends AbstractTestNGCucumberTests {
         }
     }
 
-    //GRISELDA
 }

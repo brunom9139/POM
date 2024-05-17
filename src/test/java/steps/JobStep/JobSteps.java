@@ -41,7 +41,6 @@ public class JobSteps {
         job_objeto.asdasdasd();
     }
 
-
     @Cuando("voy a job title")
     public void voyAJobTitle() throws Exception {
         job_objeto.clickJobTitle();
@@ -57,7 +56,6 @@ public class JobSteps {
         job_objeto.clickTodosLosChecks();
     }
 
-
     @Cuando("voy a job paygrades")
     public void voyAJobPaygrades() throws Exception {
         job_objeto.clickEnPayGrades();
@@ -67,5 +65,31 @@ public class JobSteps {
     @Y("edito todos los registros de paygrades")
     public void editoTodosLosRegistrosDePaygrades() throws Exception {
         job_objeto.editarRegistrosPayGrades();
+    }
+
+    @Entonces("agrego un nuevo paygrade")
+    public void agregoUnNuevoPaygrade() throws Exception {
+        job_objeto.clickEnAgregarPayGrade();
+    }
+
+    @Y("voy a Employment Status")
+    public void voyAEmploymentStatus() throws Exception {
+        job_objeto.clickEnEmployment();
+    }
+
+    @Entonces("elimino primer estado de empleo")
+    public void eliminoPrimerEstadoDeEmpleo() throws Exception {
+        job_objeto.clickEnBorrarPrimerEstado();
+    }
+
+    @Y("voy a Job Categories")
+    public void voyAJobCategories() throws Exception {
+        job_objeto.clickEnJobCategories();
+    }
+
+    @Entonces("borro todas las categorias")
+    public void borroTodasLasCategorias() throws Exception {
+        job_objeto.tildarTodasCategorias();
+        job_objeto.clickEnDeletSelected();
     }
 }
