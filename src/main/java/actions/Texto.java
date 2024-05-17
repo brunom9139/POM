@@ -94,11 +94,25 @@ public class Texto {
         List<WebElement> elementos = driver.findElements(locator);
         return elementos.size();
     }
+
     public String estraerTexto(By locator){
         WebElement elemento = driver.findElement(locator);
         return elemento.getText();
     }
 
+    public int encontrarPosicionTexto(By locator, String texto_a_comparar)throws Exception {
+        List<WebElement> elementos = driver.findElements(locator);
+        int posicionTexto = 1;
+        for (WebElement elemento : elementos) {
+            if(Objects.equals(elemento.getText(), texto_a_comparar)){
+                break;//quiebra, corta
+            }
+            else{
+                posicionTexto++;
+            }
+        }
+        return posicionTexto;
+    }
 
 
 }

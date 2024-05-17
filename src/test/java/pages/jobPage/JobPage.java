@@ -29,7 +29,6 @@ public class JobPage {
     private final By locator_button_Employment_Status = By.xpath("(//a[@class='oxd-topbar-body-nav-tab-link'])[3]");
     private final By locator_button_Job_Categories = By.xpath("(//a[@class='oxd-topbar-body-nav-tab-link'])[4]");
     private final By locator_button_Work_Shifts = By.xpath("(//a[@class='oxd-topbar-body-nav-tab-link'])[5]");
-
     private final By localizarEncabezado = By.xpath("//div[@class='orangehrm-header-container']");
     private final By locator_button_add = By.xpath("//button[text()=' Add ']");
     private final By locator_input_title = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
@@ -47,7 +46,6 @@ public class JobPage {
     private final By localizadorNombreFinal = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
     private final By localizadorGuardo = By.xpath("//button[@type='submit']");
     private final By localizadorCancelar = By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--ghost']");
-
     private final By localizadorActions = By.xpath("(//div[@role='columnheader'])[3]");
     private final By locator_button_delete_one = By.xpath("//button[@class='oxd-icon-button oxd-table-cell-action-space']");
     private final By locator_button_yes_delete = By.xpath("//i[@class='oxd-icon bi-trash oxd-button-icon']");
@@ -55,10 +53,10 @@ public class JobPage {
     private final By locator_delete_selected = By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--label-danger orangehrm-horizontal-margin']");
     //strings para armar selectores body table
     private final String table_row = "//div[@class='oxd-table-row oxd-table-row--with-border']";
-
     private final By locator_ordenamiento = By.xpath("//i[@class='oxd-icon bi-sort-alpha-down oxd-icon-button__icon oxd-table-header-sort-icon']");
     private final By locator_ordenamiento_descendente = By.xpath("(//li[@class='oxd-table-header-sort-dropdown-item'])[2]");
     private final By locator_ordenamiento_ascendente = By.xpath("(//li[@class='oxd-table-header-sort-dropdown-item'])[1]");
+    private final By locator_textos_job_categories = By.xpath("//div[@class='oxd-table-body']//div//div[2]/div");
 
 
     public void clickEnJob() throws Exception {
@@ -83,15 +81,19 @@ public class JobPage {
         mouse.Clickear(locator_button_job);
         mouse.Clickear(locator_button_job_titles);
     }
+
     public void clickJobTitle() throws Exception {
         mouse.Clickear(locator_button_job_titles);
     }
+
     public void clickEnEmployment() throws Exception {
         mouse.Clickear(locator_button_Employment_Status);
     }
+
     public void clickEnJobCataegories() throws Exception {
         mouse.Clickear(locator_button_Job_Categories);
     }
+
     public void clickEnWork_Shifts() throws Exception {
         mouse.Clickear(locator_button_Work_Shifts);
     }
@@ -101,12 +103,15 @@ public class JobPage {
         boolean validar = texto.compararTextoContiene(locator_text_record_found, String.valueOf(totalJobDescription));
         Assert.assertTrue(validar);
     }
+
     public void clickTodosLosChecks() throws Exception {
         mouse.hacerClickEnElementos(locator_de_los_ckecks);
     }
+
     public void clickEnPayGrades() throws Exception {
         mouse.Clickear(locator_button_pay_grade);
     }
+
     public void editarRegistrosPayGrades() throws Exception {
         try {
             List<WebElement> elementosLapiz = Session.getInstance().getWebDriver().findElements(localizadorLapices);
@@ -214,6 +219,16 @@ public class JobPage {
         accion.hacerScroll(locator_ordenamiento);
         mouse.ClickearJs(locator_ordenamiento);
         mouse.ClickearJs(locator_ordenamiento_descendente);
+    }
+
+    ////div[@class='oxd-toast-content oxd-toast-content--success'] este es el selector del cartelito success
+    //Session.getInstance().getWebDriver() esto es el driver
+    public void borrarPosicionDeseada(String texto_A_Borrar) throws Exception {
+        int posicionTexto = texto.encontrarPosicionTexto(locator_textos_job_categories,texto_A_Borrar);
+        WebElement locator_borrar_posicion_deseada = Session.getInstance().getWebDriver().findElement(By.xpath("(//div[@class='oxd-table-body']//button[1])["+posicionTexto+"]"));
+        accion.hacerScroll(locator_borrar_posicion_deseada);
+        locator_borrar_posicion_deseada.click();
+        mouse.Clickear(locator_button_yes_delete);
     }
 
 }

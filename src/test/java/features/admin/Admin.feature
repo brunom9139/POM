@@ -133,7 +133,7 @@ Característica: Estos son los test de Admin
     Cuando ingreso en admin
     Cuando ingreso en job
     Y voy a Job Categories
-    Entonces borro la posicion 3
+    Entonces borro la posicion que contiene "Operatives"
 
   @Test @Admin @OrdenarDeFormaDescendenteJobTitles
   Escenario: Se ordena de forma descendente todos los titulos
@@ -150,3 +150,12 @@ Característica: Estos son los test de Admin
     Cuando ingreso en job
     Y voy a job title
     Entonces ordenar en forma ascendente
+
+  @Test @Admin @EditarOrganizacion
+  Escenario: Se edita la organizacion
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Cuando ingreso en organization
+    Y voy a general information
+    Entonces edito todos los campos "gri" "4254" "5245" "34763547345" "1111111" "griselda2@gmail.com" "pasaje beltrabn 55" "sm tuc 454" "alderetes" "tucuman" "6553" "flglfkglkfgjfj"
+    #Entonces verifico con el boton Success

@@ -59,7 +59,6 @@ public class JobSteps {
     @Cuando("voy a job paygrades")
     public void voyAJobPaygrades() throws Exception {
         job_objeto.clickEnPayGrades();
-
     }
 
     @Y("edito todos los registros de paygrades")
@@ -141,7 +140,9 @@ public class JobSteps {
         job_objeto.ordenarAscendentemente();
     }
 
-    @Entonces("borro la posicion {int}")
-    public void borroLaPosicion(int arg0) {
+
+    @Entonces("borro la posicion que contiene {string}")
+    public void borroLaPosicionQueContiene(String texto_A_Borrar) throws Exception {
+        job_objeto.borrarPosicionDeseada(texto_A_Borrar);
     }
 }
