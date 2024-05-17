@@ -1,4 +1,4 @@
-package pages.Elements;
+package pages.elements;
 
 import actions.*;
 import org.openqa.selenium.By;

@@ -1,4 +1,4 @@
-package pages.JobPage;
+package pages.jobPage;
 
 import actions.*;
 import factory.Session;

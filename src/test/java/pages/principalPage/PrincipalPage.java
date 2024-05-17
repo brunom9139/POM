@@ -1,4 +1,4 @@
-package pages.PrincipalPage;
+package pages.principalPage;
 
 import actions.Click;
 import actions.Texto;

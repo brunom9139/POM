@@ -1,11 +1,11 @@
-package steps.AdminStep;
+package steps.adminStep;
 
 import factory.WebDriverManager;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.openqa.selenium.WebDriver;
-import pages.AdminPage.AdminPage;
-import pages.PrincipalPage.PrincipalPage;
+import pages.adminPage.AdminPage;
+import pages.principalPage.PrincipalPage;
 
 public class AdminStep {
     WebDriver driver = WebDriverManager.getDriver();

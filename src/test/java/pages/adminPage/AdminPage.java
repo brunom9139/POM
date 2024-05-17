@@ -1,4 +1,4 @@
-package pages.AdminPage;
+package pages.adminPage;
 
 import actions.*;
 import org.openqa.selenium.By;

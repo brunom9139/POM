@@ -1,12 +1,12 @@
-package steps.Login;
+package steps.login;
 
 import factory.WebDriverManager;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.openqa.selenium.WebDriver;
-import pages.LoginPage.LogueoPage;
-import pages.PrincipalPage.PrincipalPage;
+import pages.loginPage.LogueoPage;
+import pages.principalPage.PrincipalPage;
 
 public class LogueoStep {
     WebDriver driver = WebDriverManager.getDriver();

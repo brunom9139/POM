@@ -1,4 +1,4 @@
-package pages.LoginPage;
+package pages.loginPage;
 
 import actions.Click;
 import actions.Escribir;

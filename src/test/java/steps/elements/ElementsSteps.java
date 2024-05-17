@@ -1,4 +1,4 @@
-package steps.Elements;
+package steps.elements;
 
 import factory.WebDriverManager;
 import io.cucumber.java.es.Cuando;
@@ -6,7 +6,7 @@ import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.openqa.selenium.WebDriver;
-import pages.Elements.*;
+import pages.elements.*;
 
 public class ElementsSteps {
     WebDriver driver = WebDriverManager.getDriver();

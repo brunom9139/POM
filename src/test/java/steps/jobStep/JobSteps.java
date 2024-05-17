@@ -1,12 +1,12 @@
-package steps.JobStep;
+package steps.jobStep;
 
 import factory.WebDriverManager;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.openqa.selenium.WebDriver;
-import pages.Elements.*;
-import pages.JobPage.JobPage;
+import pages.elements.*;
+import pages.jobPage.JobPage;
 
 public class JobSteps {
 
