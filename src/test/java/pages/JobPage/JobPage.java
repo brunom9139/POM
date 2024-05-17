@@ -53,6 +53,8 @@ public class JobPage {
     private final By locator_button_yes_delete = By.xpath("//i[@class='oxd-icon bi-trash oxd-button-icon']");
     private final By locator_checkbox_todos = By.xpath("//span[@class='oxd-checkbox-input oxd-checkbox-input--active --label-right oxd-checkbox-input']");
     private final By locator_delete_selected = By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--label-danger orangehrm-horizontal-margin']");
+    //strings para armar selectores body table
+    private final String table_row = "//div[@class='oxd-table-row oxd-table-row--with-border']";
 
     public void clickEnJob() throws Exception {
         mouse.Clickear(locator_button_job);
@@ -124,11 +126,24 @@ public class JobPage {
         accion.hacerScroll(localizarEncabezado);
     }
 
+    public void clickEnAgregarTitle() throws Exception {
+        accion.hacerScroll(locator_button_add);
+        mouse.ClickearJs(locator_button_add);
+        teclado.Escribir(locator_input_name,"Programador");
+        mouse.Clickear(locator_button_save);
+    }
+
     public void clickEnAgregarPayGrade() throws Exception {
-        //hacerScrollEncabezado();
         accion.hacerScroll(locator_button_add);
          mouse.ClickearJs(locator_button_add);
         teclado.Escribir(locator_input_name,"Griselda");
+        mouse.Clickear(locator_button_save);
+    }
+
+    public void clickEnAgregarEstado(String estado) throws Exception {
+        accion.hacerScroll(locator_button_add);
+        mouse.ClickearJs(locator_button_add);
+        teclado.Escribir(locator_input_name,estado);
         mouse.Clickear(locator_button_save);
     }
 
@@ -147,7 +162,8 @@ public class JobPage {
         mouse.ClickearJs(locator_button_yes_delete);
     }
 
-    public void tildarTodasCategorias() throws Exception {
+
+    public void tildarTodos() throws Exception {
         accion.hacerScroll(locator_checkbox_todos);
         mouse.ClickearJs(locator_checkbox_todos);
     }
@@ -155,6 +171,33 @@ public class JobPage {
     public void clickEnDeletSelected() throws Exception {
         accion.hacerScroll(locator_delete_selected);
         mouse.ClickearJs(locator_delete_selected);
+    }
+
+    //este metodo obtiene el selector de la fila en posicion deseada
+    public static By obtenerSelectorPosicionFila( String table_row, int posicion){
+      By localizadorFinalFila = By.xpath("(" + table_row + ")[" + posicion + "]");
+      return localizadorFinalFila;
+    }
+
+    //metodo que retorna el selector para tildar en posicion deseada
+    public static By obtenerSelectorTildarPorFilaDeseada(By localizador_fila){
+        By localizador_tilde_fila = By.xpath("("+localizador_fila+")[1]");//mal
+        return localizador_fila;
+    }
+    //metodo para borrar en posicion deseada
+    public static By obtenerSelectorBorrarPorFilaDeseada(By localizador_fila){
+        By localizador_borrar_fila = By.xpath("("+localizador_fila+")[2]");//mal
+        return localizador_fila;
+    }
+    //metodo para editar en posicion deseada
+    public static By obtenerSelectorEditarPorFilaDeseada(By localizador_fila){
+        By localizador_editar_fila = By.xpath("("+localizador_fila+")[3]"); //mal
+        return localizador_fila;
+    }
+
+    public void buscarEstadoAgreado(String estado_agregado){
+        //tengo que recorrer la lista hasta que lo encuentre,sino devuelve error
+
     }
 
 }

@@ -51,6 +51,14 @@ Característica: Estos son los test de Admin
     Cuando voy a job paygrades
     Y edito todos los registros de paygrades
 
+  @Test @Admin @AgregarTitle
+  Escenario: Agrego un titulo
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Cuando ingreso en job
+    Y voy a job title
+    Entonces agrego un nuevo titulo
+
   @Test @Admin @AgregarPayGrade
     Escenario: Agrego paygrade
      Dado que me logueo "Admin" "admin123"
@@ -58,6 +66,41 @@ Característica: Estos son los test de Admin
     Cuando ingreso en job
     Y voy a job paygrades
     Entonces agrego un nuevo paygrade
+
+  @Test @Admin @EditarPayGrade
+  Escenario: Editar paygrade
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Cuando ingreso en job
+    Y voy a job paygrades
+    Entonces edito todos los paygrades
+
+  @Test @Admin @BorrarTodosPayGrades
+  Escenario: Borrar todos los paygrades de job
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Cuando ingreso en job
+    Y voy a job paygrades
+    Entonces borro todos los paygrades de job
+
+
+  @Test @Admin @AgregarEstado
+  Escenario: Agregar estado de empleo
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Cuando ingreso en job
+    Y voy a Employment Status
+    Entonces agrego estado de empleo "Corrido"
+    #esto deberia verificar la alerta que aparece en verde
+
+  @Test @Admin @AgregarEstado
+  Escenario: Agregar estado de empleo y verificar mediante texto
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Cuando ingreso en job
+    Y voy a Employment Status
+    Y agrego estado de empleo "Corrido"
+    Entonces verifico que aparezca en la lista "Corrido"
 
   @Test @Admin @BorrarPrimerEstado
     Escenario: Se borra el primer estado de empleo
@@ -68,6 +111,14 @@ Característica: Estos son los test de Admin
     Entonces elimino primer estado de empleo
     #aqui podria hacer que verifique el mensaje de la alerta que fue eiminado con exito
 
+  @Test @Admin @BorrarTitles
+  Escenario: Borrar todos los titulos de job
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Cuando ingreso en job
+    Y voy a Job Categories
+    Entonces borro todos los titulos de job
+
   @Test @Admin @BorrarCategorias
   Escenario: Borrar todas las categorias de job
     Dado que me logueo "Admin" "admin123"
@@ -75,3 +126,12 @@ Característica: Estos son los test de Admin
     Cuando ingreso en job
     Y voy a Job Categories
     Entonces borro todas las categorias
+
+  @Test @Admin @BorrarCategoriaPorPosicion
+  Escenario: Borra la categoria en la posicion deseada
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Cuando ingreso en job
+    Y voy a Job Categories
+    Entonces borro la posicion 3
+

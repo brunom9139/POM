@@ -87,9 +87,47 @@ public class JobSteps {
         job_objeto.clickEnJobCategories();
     }
 
-    @Entonces("borro todas las categorias")
+    @Entonces("borro todas las categorias")//borrar todos hacer uno solo paso
     public void borroTodasLasCategorias() throws Exception {
-        job_objeto.tildarTodasCategorias();
+        job_objeto.tildarTodos();
         job_objeto.clickEnDeletSelected();
+    }
+
+
+
+    @Entonces("agrego un nuevo titulo")
+    public void agregoUnNuevoTitulo() throws Exception {
+        job_objeto.clickEnAgregarTitle();
+    }
+
+    @Entonces("borro la posicion")
+    public void borroLaPosicion() {
+
+    }
+
+    @Entonces("edito todos los paygrades")
+    public void editoTodosLosPaygrades() throws Exception {
+        job_objeto.editarRegistrosPayGrades();
+    }
+
+    @Entonces("borro todos los titulos de job")
+    public void borroTodosLosTitulosDeJob() throws Exception {
+        job_objeto.tildarTodos();
+        job_objeto.clickEnDeletSelected();
+    }
+
+    @Entonces("borro todos los paygrades de job")
+    public void borroTodosLosPaygradesDeJob() throws Exception {
+        job_objeto.tildarTodos();
+        job_objeto.clickEnDeletSelected();
+    }
+
+    @Entonces("agrego estado de empleo {string}")
+    public void agregoEstadoDeEmpleo(String estado) throws Exception {
+        job_objeto.clickEnAgregarEstado(estado);
+    }
+
+    @Entonces("verifico que aparezca en la lista {string}")
+    public void verificoQueAparezcaEnLaLista(String estado_agregado) {
     }
 }
