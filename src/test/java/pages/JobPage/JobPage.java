@@ -51,7 +51,7 @@ public class JobPage {
     private final By localizadorActions = By.xpath("(//div[@role='columnheader'])[3]");
     private final By locator_button_delete_one = By.xpath("//button[@class='oxd-icon-button oxd-table-cell-action-space']");
     private final By locator_button_yes_delete = By.xpath("//i[@class='oxd-icon bi-trash oxd-button-icon']");
-    private final By locator_checkbox_todos = By.xpath("(//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]");
+    private final By locator_checkbox_todos = By.xpath("//span[@class='oxd-checkbox-input oxd-checkbox-input--active --label-right oxd-checkbox-input']");
     private final By locator_delete_selected = By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--label-danger orangehrm-horizontal-margin']");
 
     public void clickEnJob() throws Exception {
@@ -127,7 +127,7 @@ public class JobPage {
     public void clickEnAgregarPayGrade() throws Exception {
         //hacerScrollEncabezado();
         accion.hacerScroll(locator_button_add);
-         mouse.Clickear(locator_button_add);
+         mouse.ClickearJs(locator_button_add);
         teclado.Escribir(locator_input_name,"Griselda");
         mouse.Clickear(locator_button_save);
     }
@@ -142,19 +142,19 @@ public class JobPage {
 
     public void clickEnBorrarPrimerEstado() throws Exception {
         //tuve problemas para que lo encuentre al primero
-      // accion.hacerScroll(localizadorActions);
-        mouse.Clickear(locator_button_delete_one);
-        mouse.Clickear(locator_button_yes_delete);
+      accion.hacerScroll(locator_button_delete_one);
+        mouse.ClickearJs(locator_button_delete_one);
+        mouse.ClickearJs(locator_button_yes_delete);
     }
 
     public void tildarTodasCategorias() throws Exception {
-       // mouse.Clickear(locator_checkbox_todos);
-        //mouse.ClickearJs(locator_checkbox_todos);
-        mouse.hacerClickEnElementos(locator_checkbox_todos);
+        accion.hacerScroll(locator_checkbox_todos);
+        mouse.ClickearJs(locator_checkbox_todos);
     }
 
     public void clickEnDeletSelected() throws Exception {
-        mouse.Clickear(locator_delete_selected);
+        accion.hacerScroll(locator_delete_selected);
+        mouse.ClickearJs(locator_delete_selected);
     }
 
 }

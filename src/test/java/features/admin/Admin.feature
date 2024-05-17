@@ -66,7 +66,7 @@ Característica: Estos son los test de Admin
     Cuando ingreso en job
     Y voy a Employment Status
     Entonces elimino primer estado de empleo
-    #aqui falta que verifique el mensaje de la alerta que fue eiminado con exito
+    #aqui podria hacer que verifique el mensaje de la alerta que fue eiminado con exito
 
   @Test @Admin @BorrarCategorias
   Escenario: Borrar todas las categorias de job
