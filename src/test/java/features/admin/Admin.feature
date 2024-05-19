@@ -159,3 +159,19 @@ Característica: Estos son los test de Admin
     Y voy a general information
     Entonces edito todos los campos "gri" "4254" "5245" "34763547345" "1111111" "griselda2@gmail.com" "pasaje beltrabn 55" "sm tuc 454" "alderetes" "tucuman" "6553" "flglfkglkfgjfj"
     #Entonces verifico con el boton Success
+
+  @Test @Admin @BuscarLocalidad
+  Escenario: Se busca una localidad
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Cuando ingreso en organization
+    Y voy a locations
+    Entonces busco una localidad "ALDERETES" "CRUZ ALTA" "A"
+
+  @Test @Admin @AgregarLocalidad
+  Escenario: Se agrega una localidad
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Cuando ingreso en organization
+    Y voy a locations
+    Entonces agrego una localidad "ALDERETES" "CRUZ ALTA" "TUCUMAN" "4278" "435362622" "DSDGDSHGHSDGSD" "sndfjsgdhadsk" "notasjajaja"
