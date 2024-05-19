@@ -183,33 +183,6 @@ public class JobPage {
         mouse.ClickearJs(locator_delete_selected);
     }
 
-    //este metodo obtiene el selector de la fila en posicion deseada
-    public static By obtenerSelectorPosicionFila( String table_row, int posicion){
-      By localizadorFinalFila = By.xpath("(" + table_row + ")[" + posicion + "]");
-      return localizadorFinalFila;
-    }
-
-    //metodo que retorna el selector para tildar en posicion deseada
-    public static By obtenerSelectorTildarPorFilaDeseada(By localizador_fila){
-        By localizador_tilde_fila = By.xpath("("+localizador_fila+")[1]");//mal
-        return localizador_fila;
-    }
-    //metodo para borrar en posicion deseada
-    public static By obtenerSelectorBorrarPorFilaDeseada(By localizador_fila){
-        By localizador_borrar_fila = By.xpath("("+localizador_fila+")[2]");//mal
-        return localizador_fila;
-    }
-    //metodo para editar en posicion deseada
-    public static By obtenerSelectorEditarPorFilaDeseada(By localizador_fila){
-        By localizador_editar_fila = By.xpath("("+localizador_fila+")[3]"); //mal
-        return localizador_fila;
-    }
-
-    public void buscarEstadoAgreado(String estado_agregado){
-        //tengo que recorrer la lista hasta que lo encuentre,sino devuelve error
-
-    }
-
     public void ordenarAscendentemente() throws Exception {
         accion.hacerScroll(locator_ordenamiento);
         mouse.ClickearJs(locator_ordenamiento);

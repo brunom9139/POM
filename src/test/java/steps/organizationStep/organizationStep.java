@@ -22,7 +22,7 @@ public class organizationStep {
     OrganizationPage org_objeto = new OrganizationPage(driver);
     @Cuando("ingreso en organization")
     public void ingresoEnOrganization() throws Exception {
-        org_objeto.clickEnGeneralOrganization();
+        org_objeto.clickEnOrganization();
     }
 
     @Y("voy a general information")
