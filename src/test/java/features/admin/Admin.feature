@@ -157,7 +157,7 @@ Característica: Estos son los test de Admin
     Cuando ingreso en admin
     Cuando ingreso en organization
     Y voy a general information
-    Entonces edito todos los campos "gri" "4254" "5245" "34763547345" "1111111" "griselda2@gmail.com" "pasaje beltrabn 55" "sm tuc 454" "alderetes" "tucuman" "6553" "flglfkglkfgjfj"
+    Entonces edito todos los campos "Medrano Griselda" "417463988" "333" "4941536" "9999999999999" "griselda2@gmail.com" "pasaje beltrabn 55" "sm tuc 454" "alderetes" "tucuman" "4178" "flglfkglkfjajajaasgjfj"
     #Entonces verifico con el boton Success
 
   @Test @Admin @BuscarLocalidad
