@@ -1,10 +1,10 @@
 package actions;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import factory.Session;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Acciones {
     private WebDriver driver;
@@ -113,7 +113,35 @@ public class Acciones {
 
     public void borrarTexto(By locator){
         Actions actions = new Actions(driver);
+
         actions.moveToElement(buscar.buscarElemento(locator)).sendKeys(Keys.DELETE).perform();
+    }
+
+    public void limpiarCampoyEscribir(By locator, String text) throws Exception {
+        // Inicializa el WebDriver (asumiendo que Session es tu clase personalizada para gestionar sesiones)
+        WebDriver driver = Session.getInstance().getWebDriver();
+        WebElement campo = driver.findElement(locator);
+
+        Click mouse = new Click(driver);
+
+        // Clic en el elemento usando JavaScript
+        mouse.ClickearJs(locator);
+        // Borrar el contenido del campo de entrada usando JavaScript para asegurar que esté limpio
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].value = '';", campo);
+        // Verificar que el campo está vacío
+        while (!campo.getAttribute("value").isEmpty()) {
+            js.executeScript("arguments[0].value = '';", campo);
+        }
+        // Adicionalmente enviar combinación de teclas para asegurarse de borrar cualquier texto existente
+        campo.sendKeys(Keys.CONTROL + "a");  // Seleccionar todo el texto (en Windows/Linux)
+        borrarTexto(locator);
+
+       //este no funciona--> campo.sendKeys(Keys.DELETE);  // Borrar el texto seleccionado
+        // Enviar el nuevo texto
+        campo.sendKeys(text);
+        // Cerrar el navegador (si es necesario)
+        // driver.quit();
     }
 
 }

@@ -4,8 +4,10 @@ import actions.Acciones;
 import actions.Click;
 import actions.Escribir;
 import actions.Texto;
+import org.openqa.selenium.Keys;
 import factory.Session;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.CadenaCaracteres;
@@ -83,11 +85,17 @@ public class OrganizationPage {
         accion.hacerScroll(locator_button_edit);
         mouse.ClickearJs(locator_button_edit);
 
+        accion.limpiarCampoyEscribir(locator_input_name,"aldereteshahahah");
+
+        /*no funciona
       //  accion.borrarTexto(locator_input_name);
-        WebElement campo = Session.getInstance().getWebDriver().findElement(locator_input_name);
+        WebDriver driver = Session.getInstance().getWebDriver();
+        WebElement campo = driver.findElement(locator_input_name);
         mouse.ClickearJs(locator_input_name);
-        campo.clear();
-        teclado.Escribir(locator_input_name,nombre);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].value = '';", campo);
+        campo.sendKeys("alderetes");
+       // teclado.Escribir(locator_input_name,nombre);*/
 
         mouse.ClickearJs(locator_number_registration);
         teclado.Escribir(locator_number_registration, String.valueOf(num));
