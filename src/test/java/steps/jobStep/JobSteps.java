@@ -140,9 +140,25 @@ public class JobSteps {
         job_objeto.ordenarAscendentemente();
     }
 
-
     @Entonces("borro la posicion que contiene {string}")
     public void borroLaPosicionQueContiene(String texto_A_Borrar) throws Exception {
         job_objeto.borrarPosicionDeseada(texto_A_Borrar);
     }
+
+
+    @Entonces("edito todos los estados a null")
+    public void editoTodosLosEstadosANull() {
+        job_objeto.editarEstadosANull();
+    }
+
+    @Y("voy a Work Shifts")
+    public void voyAWorkShifts() throws Exception {
+        job_objeto.clickEnWorkShifts();
+    }
+
+    @Entonces("edito todos los horarios de trabajo a turno noche de {string} a {string}")
+    public void editoTodosLosHorariosDeTrabajoATurnoNocheDeA(String horario_inicio, String horario_fin) {
+        job_objeto.editarHorariosDeTrabajoANoche(horario_inicio,horario_fin);
+    }
+
 }

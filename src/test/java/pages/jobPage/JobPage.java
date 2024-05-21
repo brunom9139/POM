@@ -58,11 +58,20 @@ public class JobPage {
     private final By locator_ordenamiento_ascendente = By.xpath("(//li[@class='oxd-table-header-sort-dropdown-item'])[1]");
     private final By locator_textos_job_categories = By.xpath("//div[@class='oxd-table-body']//div//div[2]/div");
 
+    //    //div[@class='oxd-table-body']//div//button[@class='oxd-icon-button oxd-table-cell-action-space'][2]
+    //   (//input[@class='oxd-input oxd-input--active'])[2]
+    private final By locator_button_name_edit_status = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
+    private final By locator_button_lapiz = By.xpath("//div[@class='oxd-table-body']//div//button[@class='oxd-icon-button oxd-table-cell-action-space'][2]");
+
+    // //div[@class='oxd-table-body']/div//div[@class='oxd-table-cell-actions']//button[@class='oxd-icon-button oxd-table-cell-action-space'][2]
+    private final By locator_button_lapiz_edit_hr = By.xpath("//div[@class='oxd-table-body']/div//div[@class='oxd-table-cell-actions']//button[@class='oxd-icon-button oxd-table-cell-action-space'][2]");
+    private final By locator_button_hr_inicio = By.xpath("(//i[@class='oxd-icon bi-clock oxd-time-input--clock'])[1]");
+    private final By locator_button_hr_fin = By.xpath("(//i[@class='oxd-icon bi-clock oxd-time-input--clock'])[2]");
 
     public void clickEnJob() throws Exception {
         mouse.Clickear(locator_button_job);
-
     }
+
     public void cargarFormularioJobTitle(String titulo,String descripcion,String nota) throws Exception {
         mouse.Clickear(locator_button_job_titles);
         mouse.ClickearJs(locator_button_add);
@@ -92,10 +101,6 @@ public class JobPage {
 
     public void clickEnJobCataegories() throws Exception {
         mouse.Clickear(locator_button_Job_Categories);
-    }
-
-    public void clickEnWork_Shifts() throws Exception {
-        mouse.Clickear(locator_button_Work_Shifts);
     }
 
     public void cantidadJobDescription() throws Exception {
@@ -131,6 +136,53 @@ public class JobPage {
             e.printStackTrace();
         }
     }
+
+    public void editarEstadosANull(){
+        try {
+            List<WebElement> elementosLapiz = Session.getInstance().getWebDriver().findElements(locator_button_lapiz);
+            for (int i = 1; i <= elementosLapiz.size(); i++) {
+                WebElement elemento_lapiz_edit = Session.getInstance().getWebDriver().findElement(By.xpath("(//div[@class='oxd-table-cell-actions']/button[2])["+i+"]"));
+                accion.hacerScroll(elemento_lapiz_edit);
+                elemento_lapiz_edit.click();
+
+                String texto = "NULL";
+                accion.hacerScroll(locator_button_name_edit_status);
+                //mouse.ClickearJs(locator_button_name_edit_status);
+                accion.limpiarCampoyEscribir(locator_button_name_edit_status,texto);
+
+                mouse.Clickear(localizadorGuardo);
+              //  mouse.Clickear(localizadorCancelar);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void editarHorariosDeTrabajoANoche(String hr1,String hr2){
+        try {
+            List<WebElement> elementosLapiz = Session.getInstance().getWebDriver().findElements(locator_button_lapiz_edit_hr);
+            for (int i = 1; i <= elementosLapiz.size(); i++) {
+                WebElement elemento_lapiz_edit_hr = Session.getInstance().getWebDriver().findElement(By.xpath("(//div[@class='oxd-table-cell-actions']/button[2])["+i+"]"));
+                accion.hacerScroll(elemento_lapiz_edit_hr);
+                elemento_lapiz_edit_hr.click();
+                //click en selector inicio
+                accion.hacerScroll(locator_button_hr_inicio);
+                accion.limpiarCampoyEscribir(locator_button_hr_inicio,hr1);
+                //click en selector fin
+                accion.hacerScroll(locator_button_hr_fin);
+                accion.limpiarCampoyEscribir(locator_button_hr_fin,hr2);
+
+                mouse.Clickear(localizadorGuardo);
+                //  mouse.Clickear(localizadorCancelar);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
 
     public void hacerScrollEncabezado(){
         accion.hacerScroll(localizarEncabezado);
@@ -172,7 +224,6 @@ public class JobPage {
         mouse.ClickearJs(locator_button_yes_delete);
     }
 
-
     public void tildarTodos() throws Exception {
         accion.hacerScroll(locator_checkbox_todos);
         mouse.ClickearJs(locator_checkbox_todos);
@@ -203,5 +254,7 @@ public class JobPage {
         locator_borrar_posicion_deseada.click();
         mouse.Clickear(locator_button_yes_delete);
     }
+
+
 
 }
