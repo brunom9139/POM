@@ -37,4 +37,15 @@ public class PimStep {
     public void cambioSuNombreA(String primer_nombre, String segundo_nombre, String apellido) {
         pim_objeto.editarNombreEmpleado(primer_nombre,segundo_nombre,apellido);
     }
+
+    @Entonces("agrego un empleado aleatoriamente")
+    public void agregoUnEmpleadoAleatoriamente() throws Exception {
+        pim_objeto.clickEnAgregar();
+        pim_objeto.agregarEmpleado();
+    }
+
+    @Entonces("edito su estado y rol")
+    public void editoSuEstadoYRol() throws Exception {
+        pim_objeto.agregarEmpleadoYEditarlo();
+    }
 }

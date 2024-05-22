@@ -167,7 +167,6 @@ Característica: Estos son los test de Admin
     Y voy a Work Shifts
     Entonces edito todos los horarios de trabajo a turno noche de "14:00 PM" a "22:00 PM"
 
-
   @Test @Admin @Organizacion @EditarOrganizacion
   Escenario: Se edita la organizacion
     Dado que me logueo "Admin" "admin123"
@@ -192,6 +191,15 @@ Característica: Estos son los test de Admin
     Cuando ingreso en organization
     Y voy a locations
     Entonces agrego una localidad "ALDERETES" "CRUZ ALTA" "TUCUMAN" "4278" "435362622" "DSDGDSHGHSDGSD" "sndfjsgdhadsk" "notasjajaja"
+
+  @Test @Admin @User @AgregarUsuario
+  Escenario: Buscar un usuario en User Management
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Cuando ingreso en User Management
+    Y voy a Users
+    Y completo los campos con los datos y busco "Griselda Medrano" "GRIKI"
+    Entonces verifico que se encuentre el usuario
 
   @Test @Admin @User @AgregarUsuario
   Escenario: Buscar un usuario en User Management

@@ -56,6 +56,12 @@ public class Acciones {
         Actions actions = new Actions(driver);
         actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
     }
+
+    public void flechaAbajo(){
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
+    }
+
     public void clickFlechaAbajoDoble(By locator){
         Actions actions = new Actions(driver);
         //actions.click(buscar.buscarElemento(locator))
