@@ -13,6 +13,8 @@ public class PrincipalPage {
     private final Texto texto;
     private final By locator_button_admin = By.xpath("//span[text()='Admin']");
     private final By locator_button_pim = By.xpath("//span[text()='PIM']");
+    private final By locator_button_claim = By.xpath("//span[text()='Claim']");
+
 
 
 
@@ -33,5 +35,8 @@ public class PrincipalPage {
     }
     public void clickPim() throws Exception {
         mouse.ClickearJs(locator_button_pim);
+    }
+    public void clickClaim() throws Exception {
+        mouse.ClickearJs(locator_button_claim);
     }
 }
