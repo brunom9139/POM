@@ -6,10 +6,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import java.awt.image.PackedColorModel;
+
 public class PrincipalPage {
     private final  By locator_label_sesion = By.xpath("//h6[text()='Dashboard']");
     private final Texto texto;
     private final By locator_button_admin = By.xpath("//span[text()='Admin']");
+    private final By locator_button_pim = By.xpath("//span[text()='PIM']");
+
 
 
 
@@ -26,6 +30,8 @@ public class PrincipalPage {
     }
     public void clickAdmin() throws Exception {
         mouse.Clickear(locator_button_admin);
-
+    }
+    public void clickPim() throws Exception {
+        mouse.ClickearJs(locator_button_pim);
     }
 }
