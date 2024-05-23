@@ -32,4 +32,9 @@ public class ClaimStep {
         claim_objeto.clickEnAgregar();
         claim_objeto.agregarReclamo();
     }
+
+    @Entonces("agreago una expensa de {string}")
+    public void agreagoUnaExpensaDe(String expensa) throws Exception {
+        claim_objeto.agregarReclamoConExpensa(expensa);
+    }
 }
