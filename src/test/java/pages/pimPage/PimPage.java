@@ -90,7 +90,8 @@ public class PimPage {
     }
 
     public void clickEnAgregar() throws Exception {
-        mouse.Clickear(locator_button_add);
+        accion.hacerScroll(locator_button_add);
+        mouse.ClickearJs(locator_button_add);
     }
 
     public void agregarEmpleado() throws Exception {
