@@ -51,4 +51,28 @@ Característica: Estos son los test de Admin
     Cuando voy a job paygrades
     Y edito todos los registros de paygrades
 
+  @Test @Logeo @posicionNombre
+  Escenario: Encontrar posicion de texto
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Y encuentro la posicion de "asdf12$"
 
+
+  @Test @Logeo @subirArchivo
+  Escenario: Encontrar posicion de texto
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Y voy a corporate branding y subo un archivo
+
+
+  @Test @Logeo @moverElementoColor
+  Escenario: Encontrar posicion de texto
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Y voy a corporate branding y muevo un color
+
+  @Test @Logeo @moverporjs
+  Escenario: Encontrar posicion de texto
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Y voy a corporate branding y muevo un color JS

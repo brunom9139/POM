@@ -33,4 +33,24 @@ public class AdminStep {
     public void ingresoEnAdmin() throws Exception {
         page_principal.clickAdmin();
     }
+
+    @Y("encuentro la posicion de {string}")
+    public void encuentroLaPosicionDe(String textoBuscado) throws Exception {
+        page_admin.encontrarPosicionYSelecciona(textoBuscado);
+    }
+
+    @Y("voy a corporate branding y subo un archivo")
+    public void voyACorporateBrandingYSuboUnArchivo() throws Exception {
+        page_admin.clickCorporateBranding();
+    }
+
+    @Y("voy a corporate branding y muevo un color")
+    public void voyACorporateBrandingYMuevoUnColor() throws Exception {
+        page_admin.clickCorporateBrandingMoverColor();
+    }
+
+    @Y("voy a corporate branding y muevo un color JS")
+    public void voyACorporateBrandingYMuevoUnColorJS() throws Exception {
+        page_admin.clickCorporateBrandingjS();
+    }
 }

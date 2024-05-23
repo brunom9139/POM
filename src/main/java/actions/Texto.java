@@ -99,6 +99,24 @@ public class Texto {
         return elemento.getText();
     }
 
+    public int encontrarPosicionTexto(By locator, String texto_a_comparar)throws Exception {
+        List<WebElement> elementos = driver.findElements(locator);
+        int posicionTexto = 1;
+        for (WebElement elemento : elementos) {
+            if(Objects.equals(elemento.getText(), texto_a_comparar)){
+                break;
+            }
+            else{
+                posicionTexto++;
+            }
+        }
+        return posicionTexto;
+    }
 
+    /*int posicionTexto = texto.encontrarPosicionTexto(locator_textos_job_categories,texto_A_Borrar);
+    WebElement locator_borrar_posicion_deseada = Session.getInstance().getWebDriver().findElement(By.xpath("(//div[@class='oxd-table-body']//button[1])["+posicionTexto+"]"));
+        accion.hacerScroll(locator_borrar_posicion_deseada);
+        locator_borrar_posicion_deseada.click();
+        mouse.Clickear(locator_button_yes_delete);*/
 
 }
