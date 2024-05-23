@@ -1,5 +1,6 @@
 package steps.AdminStep;
 
+import actions.Texto;
 import factory.WebDriverManager;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
@@ -32,5 +33,16 @@ public class AdminStep {
     @Y("ingreso en admin")
     public void ingresoEnAdmin() throws Exception {
         page_principal.clickAdmin();
+    }
+    @Y("en agregar user cargamos nombre de empleado {string} nombre {string} contraseña {string} y guardamos")
+    public void enAgregarUserCargamosNombreDeEmpleadoNombreContrasenaYGuardamos(String nombreEmpleado, String nombreUsuario, String password) throws Exception {
+        page_admin.agregamosUsuario(nombreEmpleado,nombreUsuario,password);
+
+    }
+
+    @Entonces("busco el usuario que ingrese de nombre {string} y palomeo")
+    public void buscoElUsuarioQueIngreseDeNombreYPalomeo(String nombre) throws Exception {
+        page_admin.palomeoEncontrado(nombre);
+
     }
 }

@@ -56,6 +56,10 @@ public class Acciones {
         Actions actions = new Actions(driver);
         actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
     }
+    public void flechaAbajo(){
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
+    }
     public void clickFlechaAbajoDoble(By locator){
         Actions actions = new Actions(driver);
         //actions.click(buscar.buscarElemento(locator))
@@ -110,12 +114,10 @@ public class Acciones {
         actions.perform();
         //realizarAccionConTeclas(By.id("miElemento"), Keys.SHIFT, "t"); Ejemplo de como usarla
     }
-
     public void borrarTexto(By locator){
         Actions actions = new Actions(driver);
         actions.moveToElement(buscar.buscarElemento(locator)).sendKeys(Keys.DELETE).perform();
     }
-
 }
 
 

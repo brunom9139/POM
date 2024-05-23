@@ -55,12 +55,10 @@ public class JobPage {
         teclado.Escribir(locator_input_note, nota);
         mouse.Clickear(locator_button_save);
     }
-
     public void validarJobCargado(String validacionjob) throws Exception {
         boolean validacion = texto.compararTextoIgual(locator_label_validation_job_titles,validacionjob);
         Assert.assertTrue(validacion);
     }
-
     public void asdasdasd()throws Exception {
         mouse.Clickear(locator_button_job);
         mouse.Clickear(locator_button_job_titles);
@@ -79,6 +77,7 @@ public class JobPage {
     public void clickEnPayGrades() throws Exception {
         mouse.Clickear(locator_button_pay_grade);
     }
+
     public void editarRegistrosPayGrades() throws Exception {
         try {
             List<WebElement> elementosLapiz = Session.getInstance().getWebDriver().findElements(localizadorLapices);

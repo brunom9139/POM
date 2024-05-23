@@ -11,10 +11,7 @@ public class PrincipalPage {
     private final Texto texto;
     private final By locator_button_admin = By.xpath("//span[text()='Admin']");
 
-
-
     private final Click mouse;
-
 
     public PrincipalPage(WebDriver driver){
         this.texto = new Texto(driver);

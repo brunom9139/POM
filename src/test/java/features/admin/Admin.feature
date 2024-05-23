@@ -51,4 +51,17 @@ Característica: Estos son los test de Admin
     Cuando voy a job paygrades
     Y edito todos los registros de paygrades
 
+  @texto @Admin @SistemUser
+  Escenario: Agregamos un usuario y luego lo buscamos
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Y en agregar user cargamos nombre de empleado "Joseph  Evans" nombre "juan$12JK" contraseña "juanka12" y guardamos
+    Entonces busco el usuario que ingrese de nombre "juan$12JK" y palomeo
+
+  Escenario: Cambiamos el color primary y subimos un archivo
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Y me dirijo a comporate branding
+    Cuando modifico el color y subo mi archivo ""
+
 

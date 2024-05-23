@@ -1,6 +1,5 @@
 package actions;
 
-import factory.Session;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,14 +12,29 @@ public class Texto {
 
     private final WebDriver driver;
     private final Acciones accion;
+    private final Click mouse;
     private final ElementoResaltado resaltar;
 
     public Texto(WebDriver driver) {
         this.driver = driver;
         this.accion = new Acciones(driver);
         this.resaltar = new ElementoResaltado(driver);
+        this.mouse = new Click(driver);
+    }
+    public int buscoEnListaYObtengoPosicion(By localizador, String nombre) throws Exception {
+        List<WebElement> elements = driver.findElements(localizador);
+        for (int i = 0; i < elements.size(); i++) {
+            if (Objects.equals(elements.get(i).getText(), nombre)) {
+                return i; // Retorna la posición (índice) del elemento en la lista
+            }
+        }
+        return -1; // Retorna -1 si no se encuentra el elemento
     }
 
+    public void clickPosicion(int posicion) throws Exception {
+        final By locator_posicion = By.xpath("(//input[@type='checkbox'])["+posicion+"]");
+        mouse.Clickear(locator_posicion);
+    }
 
     public boolean compararTextoIgual(By locator, String texto) throws Exception {
         try {
