@@ -55,7 +55,7 @@ public class PimPage {
     private final By locator_input_contra2_focus = By.xpath("(//input)[12]");
     private final By locator_button_status_redondo = By.xpath("(//span[@class='oxd-radio-input oxd-radio-input--active --label-right oxd-radio-input'])[1]");
 
-
+    private final By id_locator = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
     public void buscarEmpleadoPorId(String ID) throws Exception {
         accion.hacerScroll(locator_label);
         teclado.Escribir(locator_input_search_id,ID);
@@ -106,8 +106,12 @@ public class PimPage {
 
         mouse.Clickear(locator_button_edit_redondo);
 
+        //FALTA ESCRIBIR  EL ID ALEATORIO 4 NUM
+        accion.limpiarCampoyEscribir(id_locator,cadenaCaracteres.generarStringNumericoAleatorio(4));
+       // teclado.Escribir(id_locator,"9463");
+
         esperar_tiempo.esperar(2);
-        teclado.EscribirJs(locator_input_username_focus,apellido_empleado);
+        teclado.EscribirJs(locator_input_username_focus,cadenaCaracteres.generarStringSoloLetrasMayusculas(7));
 
         mouse.ClickearJs(locator_button_status_redondo);
 
@@ -116,6 +120,7 @@ public class PimPage {
         accion.limpiarCampoyEscribir(locator_input_contra2_focus,contra);
 
         mouse.Clickear(locator_buton_submit);
+        //aqui  me salta el error de requerido, por lo tanto no guarda el empleado
     }
 
     public void agregarEmpleadoYEditarlo() throws Exception {
