@@ -33,6 +33,7 @@ public class PimPage {
     private String primer_nombre_empleado;
     private String segundo_nombre_empleado;
     private String apellido_empleado;
+    private String nombre_usuario;
 
     private final By locator_label = By.xpath("(//label[@class='oxd-label'])[2]");
     private final By locator_input_search_id = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
@@ -48,6 +49,7 @@ public class PimPage {
     private final By locator_button_users = By.xpath("(//a[@class='oxd-topbar-body-nav-tab-link'])");
     private final By lapiz = By.xpath("//button[@class='oxd-icon-button oxd-table-cell-action-space'][2]");
     private final By input_rol = By.xpath("(//div[@class='oxd-select-text oxd-select-text--active'])[1]");
+    private final By input_status = By.xpath("(//div[@class='oxd-select-wrapper'])[2]");
     private final By locator_input_employeet_buscador = By.xpath("//input[@placeholder='Type for hints...']");
     private final By locator_button_edit_redondo = By.xpath("//span[@class='oxd-switch-input oxd-switch-input--active --label-right']");
     private final By locator_input_username_focus = By.xpath("(//input)[8]");
@@ -55,6 +57,7 @@ public class PimPage {
     private final By locator_input_contra2_focus = By.xpath("(//input)[12]");
     private final By locator_button_status_redondo = By.xpath("(//span[@class='oxd-radio-input oxd-radio-input--active --label-right oxd-radio-input'])[1]");
 
+    private final By locator_name_user_search = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
     private final By id_locator = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
     public void buscarEmpleadoPorId(String ID) throws Exception {
         accion.hacerScroll(locator_label);
@@ -98,6 +101,7 @@ public class PimPage {
         primer_nombre_empleado = RandomNameGenerator.obtenerNombreModificado();
         segundo_nombre_empleado = RandomNameGenerator.obtenerNombreModificado();
         apellido_empleado = RandomNameGenerator.obtenerApellidoModificado();
+        nombre_usuario = RandomNameGenerator.generateAnimalStringWithNumber();
         String contra = cadenaCaracteres.generarStringAlfanumericoAleatorio(12);
 
         teclado.Escribir(locator_input_name1, primer_nombre_empleado);
@@ -111,7 +115,7 @@ public class PimPage {
        // teclado.Escribir(id_locator,"9463");
 
         esperar_tiempo.esperar(2);
-        teclado.EscribirJs(locator_input_username_focus,cadenaCaracteres.generarStringSoloLetrasMayusculas(7));
+        accion.limpiarCampoyEscribir(locator_input_username_focus,nombre_usuario);
 
         mouse.ClickearJs(locator_button_status_redondo);
 
@@ -121,7 +125,7 @@ public class PimPage {
 
         mouse.Clickear(locator_buton_submit);
         //aqui  me salta el error de requerido, por lo tanto no guarda el empleado
-    }
+        }
 
     public void agregarEmpleadoYEditarlo() throws Exception {
 
@@ -129,17 +133,24 @@ public class PimPage {
         mouse.Clickear(locator_button_user_management);
         mouse.Clickear(locator_button_users);
 
-        teclado.Escribir(locator_input_employeet_buscador,primer_nombre_empleado);
+        teclado.Escribir(locator_name_user_search,nombre_usuario);
         esperar_tiempo.esperar(5);
 
-        accion.flechaAbajo();
+       // accion.flechaAbajo();
 
         accion.hacerScroll(locator_buton_submit);
         mouse.ClickearJs(locator_buton_submit);
 
+        esperar_tiempo.esperar(8);
+
         accion.hacerScroll(lapiz);
         mouse.Clickear(lapiz);
+
         accion.clickFlechaAbajo(input_rol);
+        accion.clickFlechaAbajo(input_status);
+
+        mouse.ClickearJs(locator_buton_submit);
+
     }
 
 

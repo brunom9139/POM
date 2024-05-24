@@ -50,6 +50,40 @@ public class RandomNameGenerator {
         }
     }
 
+
+    public static String generateAnimalStringWithNumber() {
+        // Array con al menos 100 nombres de animales de 5 letras cada uno
+        String[] animals = {
+                "perro", "gatoo", "raton", "burro", "lobo", "cabra", "jiraf", "cebra", "tigre", "oso",
+                "panda", "cabro", "pajaro", "mosca", "pulpo", "ballena", "delfin", "foca", "gallo", "ganso",
+                "leon", "liebre", "morsa", "mula", "orca", "puma", "pollo", "rana", "sapo", "tordo",
+                "vaca", "yegua", "zorro", "abeja", "ardilla", "burra", "camello", "castor", "ciervo", "cisne",
+                "corzo", "cuervo", "elefante", "flamenco", "golondrina", "gorrion", "halcon", "hormiga", "iguana", "koala",
+                "lagarto", "lechuza", "loro", "murcielago", "paloma", "pantera", "pingüino", "rinoceronte", "serpiente", "tapir",
+                "topo", "tortuga", "turon", "zebra", "bufalo", "coyote", "escorpion", "gorila", "jaguar", "koala",
+                "krill", "lagartija", "langosta", "leon", "liebre", "lombriz", "luciernaga", "manati", "mofeta", "nutria",
+                "perezoso", "rata", "saltamontes", "suricato", "tarantula", "tiburon", "tigre", "toro", "tucan", "urraca",
+                "venado", "wallaby", "yak", "zorrillo", "caballo", "canguro", "chinchilla", "huron", "lince", "murcielago"
+        };
+        if (animals == null || animals.length < 100) {
+            throw new IllegalArgumentException("El array debe contener al menos 100 nombres de animales.");
+        }
+
+        Random random = new Random();
+        // Seleccionar un animal aleatorio del array
+        String animal = animals[random.nextInt(animals.length)];
+
+        // Generar un número aleatorio entre 00 y 99
+        int randomNumber = random.nextInt(100);
+
+        // Formatear el número para que siempre tenga dos dígitos
+        String formattedNumber = String.format("%02d", randomNumber);
+
+        return animal + formattedNumber;
+        //String result = generateAnimalStringWithNumber(animals);
+        //System.out.println(result);
+    }
+
     public static String obtenerApellidoModificado() {
         String[] apellidos = {
                 "García", "Fernández", "González", "Rodríguez", "López", "Martínez",
