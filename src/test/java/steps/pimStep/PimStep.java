@@ -48,4 +48,27 @@ public class PimStep {
     public void editoSuEstadoYRol() throws Exception {
         pim_objeto.agregarEmpleadoYEditarlo();
     }
+
+    @Y("busco el empleado {string}")
+    public void buscoElEmpleado(String nombre) throws Exception {
+        pim_objeto.buscarEmpleadoPorName(nombre);
+        pim_objeto.clickEnSubmit();
+    }
+
+
+    @Y("agrego un contacto de emergencia {string} {string} {string} {string} {string}")
+    public void agregoUnContactoDeEmergencia(String nombre , String relacion, String telefono_casa, String movil, String telefono_trabajo) {
+
+    }
+
+    @Y("agrego un dependiente {string} {string} {string}")
+    public void agregoUnDependiente(String nombre, String relacion, String fe_nac) {
+    }
+
+    @Y("edito los detalles de contacto {string} {string} {string} {string} {string} {string} {string} {string} {string} {string}")
+    public void editoLosDetallesDeContacto(String direccion1, String direcciom2, String ciudad, String provinvia, String codigo_postal, String hogar, String movil, String trabajo, String correo1, String correo2) throws Exception {
+        pim_objeto.clickEnLapiz();
+        pim_objeto.editarDetallesDeContacto(direccion1,direcciom2,ciudad,provinvia,codigo_postal,hogar,movil,trabajo,correo1,correo2);
+        pim_objeto.clickEnSubmit();
+    }
 }
