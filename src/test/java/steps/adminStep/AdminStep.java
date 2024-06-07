@@ -33,4 +33,8 @@ public class AdminStep {
     public void ingresoEnAdmin() throws Exception {
         page_principal.clickAdmin();
     }
+
+    @Entonces("agrego una moneda")
+    public void agregoUnaMoneda() {
+    }
 }

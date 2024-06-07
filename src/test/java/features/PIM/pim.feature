@@ -22,6 +22,12 @@ Característica: Estos son los test de PIM
     Y agrego un empleado aleatoriamente
     Entonces edito su estado y rol
 
+  @Test @PIM @EditarEstadodeTodos
+  Escenario: se editan todos los empleados
+    Dado que me logueo "Admin" "admin123"
+    Y ingreso en PIM
+    Entonces edito todos los empleados cambiando su nacionalidad estado civil y genero
+
   @Test @PIM @EditarUnUsuario
   Escenario: se agrega un nuevo empleado en pim
     Dado que me logueo "Admin" "admin123"

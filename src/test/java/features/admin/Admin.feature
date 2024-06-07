@@ -67,6 +67,16 @@ Característica: Estos son los test de Admin
     Y voy a job paygrades
     Entonces agrego un nuevo paygrade
 
+  @Test @Admin @Job @AgregarPayGradeYAgregaraMoneda
+  Escenario: Agrego paygrade
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Cuando ingreso en job
+    Y voy a job paygrades
+    Y agrego un nuevo paygrade
+    Entonces agrego una moneda
+
+
   @Test @Admin @Job @EditarPayGrade
   Escenario: Editar paygrade
     Dado que me logueo "Admin" "admin123"

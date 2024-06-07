@@ -71,4 +71,9 @@ public class PimStep {
         pim_objeto.editarDetallesDeContacto(direccion1,direcciom2,ciudad,provinvia,codigo_postal,hogar,movil,trabajo,correo1,correo2);
         pim_objeto.clickEnSubmit();
     }
+
+    @Entonces("edito todos los empleados cambiando su nacionalidad estado civil y genero")
+    public void editoTodosLosEmpleadosCambiandoSuNacionalidadEstadoCivilYGenero() {
+        pim_objeto.editarTodosEmpleatos();
+    }
 }
