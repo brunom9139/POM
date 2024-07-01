@@ -98,8 +98,22 @@ public class Texto {
         WebElement elemento = driver.findElement(locator);
         return elemento.getText();
     }
+    public int retornoEncontrarPosicionTexto(By locator, String texto_a_comparar) throws Exception {
+        List<WebElement> elementos = driver.findElements(locator);
+        int posicionTexto = 1; // Si prefieres que empiece desde 1
 
-    public int encontrarPosicionTexto(By locator, String texto_a_comparar)throws Exception {
+        for (WebElement elemento : elementos) {
+            if (Objects.equals(elemento.getText(), texto_a_comparar)) {
+                return posicionTexto; // Retorna la posición cuando encuentra el texto
+            }
+            posicionTexto++;
+        }
+
+        return -1; // Retorna -1 si no encuentra el texto
+    }
+
+
+    public int encontrarTexto(By locator, String texto_a_comparar)throws Exception {
         List<WebElement> elementos = driver.findElements(locator);
         int posicionTexto = 1;
         for (WebElement elemento : elementos) {

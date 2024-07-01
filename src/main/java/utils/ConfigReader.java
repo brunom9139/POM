@@ -23,7 +23,6 @@ public class ConfigReader {
             logger.log(Level.SEVERE, "Error loading config file", e);
         }
     }
-
     public String getProperty(String key) {
         return properties.getProperty(key);
     }

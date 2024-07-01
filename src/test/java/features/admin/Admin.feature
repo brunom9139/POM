@@ -64,6 +64,20 @@ Característica: Estos son los test de Admin
     Cuando ingreso en admin
     Y voy a corporate branding y subo un archivo
 
+  @texto @Admin @cargoUsuario
+  Escenario: agrego un usuario
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Y cargo mis datos name "James  Butler" user name "juan$12Jk" y contrasena "Jk2323%JK"
+    Entonces verifico que se aya agregado el usurious "juan$12Jk"
+
+  @Test @Logeo @eliminoUsuario
+  Escenario: Elimino usuario
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Y busco al usere "juan$12Jk"
+    Entonces lo elimino "juan$12Jk"
+
 
   @Test @Logeo @moverElementoColor
   Escenario: Encontrar posicion de texto
@@ -72,7 +86,9 @@ Característica: Estos son los test de Admin
     Y voy a corporate branding y muevo un color
 
   @Test @Logeo @moverporjs
-  Escenario: Encontrar posicion de texto
+  Escenario: desplazando color con js
     Dado que me logueo "Admin" "admin123"
     Cuando ingreso en admin
     Y voy a corporate branding y muevo un color JS
+
+

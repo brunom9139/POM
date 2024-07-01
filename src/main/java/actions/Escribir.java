@@ -26,6 +26,8 @@ public class Escribir {
         escribirTexto(locator,texto, true);
     }
 
+
+
     private void escribirTexto(By locator, String texto, boolean usarJs) {
         try {
             WebElement elemento = esperar.presente(locator);

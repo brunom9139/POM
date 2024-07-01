@@ -65,10 +65,27 @@ public class Acciones {
                 .sendKeys(Keys.ENTER)
                 .perform();
     }
+    public void clickFlechaAbajoTresVeces(By locator){
+        Actions actions = new Actions(driver);
+        //actions.click(buscar.buscarElemento(locator))
+        scrollElemento(locator, actions).click()
+                .sendKeys(Keys.ARROW_DOWN)
+                .sendKeys(Keys.ARROW_DOWN)
+                .sendKeys(Keys.ARROW_DOWN)
+                .sendKeys(Keys.ENTER)
+                .perform();
+    }
     //puede mejorarse
     public void clickFlechaAbajo(By locator){
         Actions actions = new Actions(driver);
         actions.click(buscar.buscarElemento(locator))
+                .sendKeys(Keys.ARROW_DOWN)
+                .sendKeys(Keys.ENTER)
+                .perform();
+    }
+    public void FlechaAbajo(By locator){
+        Actions actions = new Actions(driver);
+        actions
                 .sendKeys(Keys.ARROW_DOWN)
                 .sendKeys(Keys.ENTER)
                 .perform();
@@ -114,6 +131,37 @@ public class Acciones {
     public void borrarTexto(By locator){
         Actions actions = new Actions(driver);
         actions.moveToElement(buscar.buscarElemento(locator)).sendKeys(Keys.DELETE).perform();
+    }
+
+    public void borroInputMetodoEspesifico(By locator) {
+        Actions actions = new Actions(driver);
+        WebElement elemento = driver.findElement(locator);
+
+        // Mueve el cursor al elemento
+        actions.moveToElement(elemento).click().perform();
+
+        // Selecciona todo el texto (Ctrl + A)
+        actions.keyDown(Keys.CONTROL).
+                sendKeys("a").
+                keyUp(Keys.CONTROL).
+                sendKeys(Keys.BACK_SPACE).
+                sendKeys(Keys.DELETE).
+                perform();
+
+    }
+    public void EscriboTextoMetodoEspesifico(By locator,String texto) {
+        Actions actions = new Actions(driver);
+        WebElement elemento = driver.findElement(locator);
+
+        // Mueve el cursor al elemento
+        actions.moveToElement(elemento).click().perform();
+
+        // Selecciona todo el texto (Ctrl + A)
+        actions.
+                sendKeys(Keys.DELETE).
+                sendKeys(texto).
+                perform();
+
     }
 
 }

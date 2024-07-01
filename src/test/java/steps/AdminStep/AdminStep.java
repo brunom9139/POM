@@ -53,4 +53,24 @@ public class AdminStep {
     public void voyACorporateBrandingYMuevoUnColorJS() throws Exception {
         page_admin.clickCorporateBrandingjS();
     }
+
+    @Y("cargo mis datos name {string} user name {string} y contrasena {string}")
+    public void cargoMisDatosNameUserNameYContrasena(String employeName, String userName, String passwod) throws Exception {
+        page_admin.cargamosDatos(employeName, userName, passwod);
+    }
+
+    @Entonces("verifico que se aya agregado el usurious {string}")
+    public void verificoQueSeAyaAgregadoElUsurious(String usuarioBusco) throws Exception {
+        page_admin.validoUsuarioEncontrado(usuarioBusco);
+    }
+
+    @Y("busco al usere {string}")
+    public void buscoAlUsere(String usuario) throws Exception {
+        page_admin.encontrarPosicionYSelecciona(usuario);
+    }
+
+    @Entonces("lo elimino {string}")
+    public void loElimino(String usuario) throws Exception {
+        page_admin.buscoYeliminoUsuario(usuario);
+    }
 }

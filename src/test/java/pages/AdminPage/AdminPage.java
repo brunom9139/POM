@@ -32,6 +32,19 @@ public class AdminPage {
     private final By locator_input_file = By.xpath("(//input[@class='oxd-file-input'])[1]");
     private final By locator_button_color = By.xpath("//div[@class='oxd-color-picker-indicator']");
     private final By locator_color_button = By.xpath("(//*[@class='oxd-color-input-preview'])[3]");
+    //selectores para cargar usuario
+    private final By locator_button_add = By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--secondary']");
+    private final By locator_user_role = By.xpath("(//div[@class='oxd-select-text-input'])[1]");
+    private final By locator_user_status = By.xpath("(//div[@class='oxd-select-text-input'])[2]");
+    private final By locator_employe_name = By.xpath("//div[@class='oxd-autocomplete-text-input oxd-autocomplete-text-input--active']");
+    private final By locator_user_name = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
+    private final By locator_password = By.xpath("(//input[@type='password'])[1]");
+    private final By locator_password_2 = By.xpath("(//input[@type='password'])[2]");
+    private final By locator_save = By.xpath("//button[@type='submit']");
+    private final By locator_user_name_elements = By.xpath("//div[@class='oxd-table-body']/div/div/div[2]");
+    private final By locator_button_elimino = By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--label-danger orangehrm-button-margin']");
+    private final By locator_usuario = By.xpath("(//input[@type='password'])[2]");
+    private final By locator_contrasenia = By.xpath("(//input[@type='password'])[2]");
 
 
 
@@ -75,10 +88,13 @@ public class AdminPage {
 
     public void encontrarPosicionYSelecciona(String textoBuscado) throws Exception {
         //locator_system_users_label
-        int posicion = texto.encontrarPosicionTexto(locator_system_users_label,textoBuscado);
-        System.out.println(posicion);
-        WebElement checks = Session.getInstance().getWebDriver().findElement(By.xpath("(//div[@class='oxd-table-body']/div/div/div[1])["+posicion+"]"));
-        checks.click();
+        int posicion = -1;
+        posicion = texto.retornoEncontrarPosicionTexto(locator_user_name_elements,textoBuscado);
+        if (posicion != -1){
+            System.out.println(posicion);
+            WebElement checks = Session.getInstance().getWebDriver().findElement(By.xpath("(//div[@class='oxd-table-body']/div/div/div[1])["+posicion+"]"));
+            checks.click();
+        }
     }
 
     public void clickCorporateBranding() throws Exception {
@@ -102,6 +118,31 @@ public class AdminPage {
         elemento_resaltado.resaltarColorCajaTexto(elemento, 150,150);
         arrastrar_soltar.dragElementByOffset(locator_button_color, -50,30);
     }
+    public void cargamosDatos(String employeName,String userName,String paswsword ) throws Exception {
+        mouse.ClickearJs(locator_button_add);
+        acciones.clickFlechaAbajo(locator_user_role);
+        teclado.Escribir(locator_input_emmployee,employeName);
+        esperar_tiempo.esperar(2);
+
+        acciones.clickFlechaAbajo(locator_input_emmployee);
+        acciones.clickFlechaAbajoDoble(locator_user_status);
+        teclado.Escribir(locator_input_username,userName);
+        teclado.Escribir(locator_password,paswsword);
+        teclado.Escribir(locator_password_2,paswsword);
+        mouse.Clickear(locator_save);
+    }
+    public void buscoYeliminoUsuario(String usuario) throws Exception {
+        int posicion = -1;
+         posicion = texto.retornoEncontrarPosicionTexto(locator_user_name_elements,usuario);
+        if (posicion != -1){
+            System.out.println(posicion);
+            WebElement checks = Session.getInstance().getWebDriver().findElement(By.xpath("(//div[@class='oxd-table-body']/div/div/div[6]//button[@class='oxd-icon-button oxd-table-cell-action-space'][1])["+posicion+"]"));
+            checks.click();
+            esperar_tiempo.esperar(1);
+            mouse.Clickear(locator_button_elimino);
+        }
+        }
+    }
 
 
-}
+
