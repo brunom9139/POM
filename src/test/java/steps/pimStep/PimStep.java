@@ -74,6 +74,6 @@ public class PimStep {
 
     @Entonces("edito todos los empleados cambiando su nacionalidad estado civil y genero")
     public void editoTodosLosEmpleadosCambiandoSuNacionalidadEstadoCivilYGenero() {
-        pim_objeto.editarTodosEmpleatos();
+        //pim_objeto.editarNombreEmpleado();
     }
 }

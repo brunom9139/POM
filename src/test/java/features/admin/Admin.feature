@@ -219,3 +219,13 @@ Característica: Estos son los test de Admin
     Y voy a Users
     Y completo los campos con los datos y busco "Griselda Medrano" "GRIKI"
     Entonces verifico que se encuentre el usuario
+
+
+    @Test @Admin @Organization @Structure
+    Escenario: se agregan unidades a la estructura de organizacion
+      Dado que me logueo "Admin" "admin123"
+      Cuando ingreso en admin
+      Cuando igreso en organization
+      Y voy a structure
+      Entonces agrego una unidad a cada estructura
+
