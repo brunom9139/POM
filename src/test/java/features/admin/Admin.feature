@@ -229,3 +229,10 @@ Característica: Estos son los test de Admin
       Y voy a structure
       Entonces agrego una unidad a cada estructura
 
+    @Test @Admin @Cualifications @Education
+      Escenario: se booran una x una las forrmaciones
+      Dado que me logueo "Admin" "admin123"
+      Cuando ingreso en admin
+      Cuando ingreso en cualifications
+      Y voy a education
+      Entonces selecciono cada una por una y las borro

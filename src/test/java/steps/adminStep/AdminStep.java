@@ -57,4 +57,21 @@ public class AdminStep {
         page_organization.clickEnEdit();
         page_organization.agregarUnidadATodos();
     }
+
+    @Cuando("ingreso en cualifications")
+    public void ingresoEnCualifications() throws Exception {
+        page_admin.clickEnCualifications();
+    }
+
+    @Y("voy a education")
+    public void voyAEducation() throws Exception {
+        page_admin.clickEnEducation();
+    }
+
+    @Entonces("selecciono cada una por una y las borro")
+    public void seleccionoCadaUnaPorUnaYLasBorro() throws Exception {
+        page_admin.marcarUnaPorUna();
+        page_admin.clickEnBorrar();
+        page_admin.clickEnYes();
+    }
 }
