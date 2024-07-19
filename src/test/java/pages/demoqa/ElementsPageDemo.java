@@ -63,8 +63,8 @@ public class ElementsPageDemo {
     private final By button_check_workspace = By.xpath("(//span[@class='rct-checkbox'])[6]");
     private final By icono_flecha_workspace  = By.xpath("(//button[@class='rct-collapse rct-collapse-btn'])[4]");
     private final By button_check_react = By.xpath("(//span[@class='rct-checkbox'])[7]");
-    private final By button_check_angular = By.xpath("(//span[@class='rct-checkbox'])[8]");
-    private final By button_check_veu = By.xpath("(//span[@class='rct-checkbox'])[9]");
+    private final By button_check_angular = By.xpath("(//span[@class='rct-checkbox'])[6]");
+    private final By button_check_veu = By.xpath("(//span[@class='rct-checkbox'])[7]");
     private final By button_check_office = By.xpath("(//span[@class='rct-checkbox'])[10]");
     private final By icono_flecha_office  = By.xpath("(//button[@class='rct-collapse rct-collapse-btn'])[5]");
     private final By button_check_public = By.xpath("(//span[@class='rct-checkbox'])[11]");
@@ -229,10 +229,7 @@ public void completarTexBox(String name, String email, String dir1, String dir2)
     mouse.Clickear(button_submit);
 }
 
-public void clickearNotas() throws Exception {
-    mouse.Clickear(icono_flecha_desktop);
-    clickEnNotas();
-}
+
 public void clickearComands() throws Exception {
     mouse.Clickear(icono_flecha_desktop);
     clickEnComandos();
@@ -244,5 +241,6 @@ public void clickearWorkspase() throws Exception {
 public void clickearOffice() throws Exception {
     mouse.Clickear(icono_flecha_documents);
     clickEnOffice();
+}
 }
 

@@ -38,4 +38,31 @@ public class PrincipalStep {
     public void tildoLaCasillaHogar() throws Exception {
         elemPage.clickEnCheckHogar();
     }
+
+    @Entonces("tildo la casilla desktop")
+    public void tildoLaCasillaDesktop() throws Exception {
+        elemPage.clickEnCheckDesktop();
+    }
+
+    @Entonces("tildo la casilla note")
+    public void tildoLaCasillaNote() throws Exception {
+        elemPage.clickEnFlechaHome();
+        elemPage.clickEnFlechaDesktop();
+        elemPage.clickEnNotas();
+    }
+
+    @Entonces("tildo la casilla commands")
+    public void tildoLaCasillaCommands() throws Exception {
+        elemPage.clickEnFlechaHome();
+        elemPage.clickEnFlechaDesktop();
+        elemPage.clickEnComandos();
+    }
+
+    @Entonces("tildo la casilla angular")
+    public void tildoLaCasillaAngular() throws Exception {
+        elemPage.clickEnFlechaHome();
+        elemPage.clickEnFlechaDocuments();
+        elemPage.clickEnFlechaWorkspace();
+        elemPage.clickEnAngular();
+    }
 }
