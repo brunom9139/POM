@@ -2,6 +2,7 @@
 
 Característica: compramos en tienda celulares
 
+
   @Test @TiendaCelulares @comproIphone6
   Escenario: compramos un iphone 6
     Dado que busco el "Iphone 6 32gb"
