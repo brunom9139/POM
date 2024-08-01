@@ -1,5 +1,6 @@
 package actions;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,10 +32,29 @@ public class Texto {
         return -1; // Retorna -1 si no se encuentra el elemento
     }
 
+
     public void clickPosicion(int posicion) throws Exception {
         final By locator_posicion = By.xpath("(//input[@type='checkbox'])["+posicion+"]");
         mouse.Clickear(locator_posicion);
     }
+    public void clickElementoPorNombre(By locator, String nombreElemento) throws Exception {
+
+            // Encuentra todos los elementos que coinciden con el locator
+            List<WebElement> elementos = driver.findElements(locator);
+
+            // Itera sobre los elementos para encontrar el que tenga el texto correspondiente
+            for (int i = 0; i < elementos.size(); i++) {
+                WebElement elemento = elementos.get(i);
+                if (elemento.getText().trim().equalsIgnoreCase(nombreElemento.trim())) {
+                    // Si el nombre coincide, hace clic en el elemento
+                    elemento.click();// Aquí pasas el WebElement directamente
+                    return; // Sale del método después de hacer clic
+                }
+            }
+
+
+    }
+
 
     public boolean compararTextoIgual(By locator, String texto) throws Exception {
         try {

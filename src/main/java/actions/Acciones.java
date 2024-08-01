@@ -1,10 +1,11 @@
 package actions;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class Acciones {
     private WebDriver driver;
@@ -94,7 +95,14 @@ public class Acciones {
         Actions actions = new Actions(driver);
         actions.dragAndDrop(fuente,destino).perform();
     }
+    public void aceptarAlertaConEspera(int tiempo) {
 
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(tiempo));
+        wait.until(ExpectedConditions.alertIsPresent());
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+
+    }
     public void control_A(By locator){
         Actions actions = new Actions(driver);
         actions.moveToElement(buscar.buscarElemento(locator))
