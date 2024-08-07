@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.w3c.dom.Text;
 
+
+
 public class CarritoCelularesPage {
     private final Click mouse;
     private final Escribir teclado;
