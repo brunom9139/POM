@@ -66,4 +66,48 @@ public class CelularesStep {
     public void eliminoElProducto(String producto) throws Exception {
         carrito_celulares.buscoYelimino(producto);
     }
+
+    @Dado("que voy a Sign up")
+    public void queVoyASignUp() throws Exception {
+        home_page.clickSingUp();
+    }
+
+
+    @Y("voy a mirar el video sobre nosotros {string} segundos")
+    public void voyAMirarElVideoSobreNosotrosSegundos(String tiempo) throws Exception {
+        home_page.clickAbout();
+        home_page.mirarVideoporUnTiempo(tiempo);
+    }
+
+    @Entonces("vuelvo a home")
+    public void vuelvoAHome() throws Exception {
+        home_page.clickBTHome();
+    }
+
+    @Y("me inscribe con mis datos {string} {string} a menos que ya este inscripto {string}")
+    public void meInscribeConMisDatosAMenosQueYaEsteInscripto(String nombre, String password, String existe) throws Exception {
+        home_page.cargoDatos(nombre,password,existe);
+    }
+
+    @Dado("que exploro todas las pestañas del encabezado y portadas, luego")
+    public void queExploroTodasLasPestanasDelEncabezadoYPortadasLuego() throws Exception {
+        home_page.recorroEncabezado();
+    }
+
+    @Cuando("escloreo en todos los catalogos de productos")
+    public void escloreoEnTodosLosCatalogosDeProductos() throws Exception {
+        home_page.hacerScroll();
+        home_page.veoPortadas();
+    }
+
+    @Y("envio el mensaje cargando mis datos{string} {string} y envio {string}")
+    public void envioElMensajeCargandoMisDatosYEnvio(String gmail, String nameUser, String mensaje) throws Exception {
+        home_page.clickContact();
+        home_page.enviar_mensaje(gmail,nameUser,mensaje);
+    }
+
+    @Entonces("verifico que el mensaje se envio con el mensaje {string}")
+    public void verificoQueElMensajeSeEnvioConElMensaje(String mensaje) {
+        home_page.validoEnvioMensaje(mensaje);
+    }
 }

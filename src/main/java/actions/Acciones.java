@@ -103,6 +103,21 @@ public class Acciones {
         alert.accept();
 
     }
+    public boolean compararTextoAlert(String textoEsperado) {
+        try {
+            // Cambia el foco al alert
+            Alert alert = driver.switchTo().alert();
+
+            // Obtiene el texto del alert
+            String textoAlert = alert.getText().trim();
+
+            // Compara el texto del alert con el texto esperado
+            return textoAlert.equals(textoEsperado.trim());
+        } catch (NoAlertPresentException e) {
+            System.out.println("No se encontró ninguna alerta.");
+            return false;
+        }
+    }
     public void control_A(By locator){
         Actions actions = new Actions(driver);
         actions.moveToElement(buscar.buscarElemento(locator))
