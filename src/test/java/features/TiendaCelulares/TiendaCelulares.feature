@@ -25,7 +25,6 @@ Característica: compramos en tienda celulares
         Y voy a mirar el video sobre nosotros "7" segundos
         Entonces vuelvo a home
 
-
        @Test @TiendaCelulares @ExloroSitio
   Escenario: exploramos el sitio luego enviamos un mensaje de felicitaciones
         Dado que exploro todas las pestañas del encabezado y portadas, luego
