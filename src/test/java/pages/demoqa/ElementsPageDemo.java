@@ -222,10 +222,10 @@ public void clickEnExcel() throws Exception {
 }
 //funciones de elements
 public void completarTexBox(String name, String email, String dir1, String dir2) throws Exception {
-    teclado.Escribir(input_full_name,name);
-    teclado.Escribir(input_email,email);
-    teclado.Escribir(input_address_one,dir1);
-    teclado.Escribir(input_address_two,dir2);
+    teclado.onEscribir(input_full_name,name);
+    teclado.onEscribir(input_email,email);
+    teclado.onEscribir(input_address_one,dir1);
+    teclado.onEscribir(input_address_two,dir2);
     mouse.Clickear(button_submit);
 }
 

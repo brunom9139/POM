@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import utils.ConfigReader;
 
 import java.util.List;
+import java.util.Objects;
 
 
 public class Texto {
