@@ -4,9 +4,13 @@ import actions.Acciones;
 import actions.Click;
 import actions.Escribir;
 import actions.Texto;
+import factory.Session;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import utils.CadenaCaracteres;
+
+import java.util.List;
 
 public class OrganizationPage {
     private final Escribir teclado;
@@ -16,7 +20,7 @@ public class OrganizationPage {
 
     CadenaCaracteres cadena = new CadenaCaracteres();
 
-    public OrganizationPage(WebDriver driver){
+    public OrganizationPage(WebDriver driver) {
         this.teclado = new Escribir(driver);
         this.mouse = new Click(driver);
         this.texto = new Texto(driver);
@@ -30,7 +34,7 @@ public class OrganizationPage {
     private final By locator_button_edit = By.xpath("//span[@class='oxd-switch-input oxd-switch-input--active --label-left']");
     private final By locator_input_name = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
     private final By locator_input_name_location_search = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
-    private final By locator_number_registration= By.xpath("(//input[@class='oxd-input oxd-input--active'])[3]");
+    private final By locator_number_registration = By.xpath("(//input[@class='oxd-input oxd-input--active'])[3]");
     private final By locator_input_city_location_search = By.xpath("(//input[@class='oxd-input oxd-input--active'])[3]");
 
     private final By locator_input_tax = By.xpath("(//input[@class='oxd-input oxd-input--active'])[3]");
@@ -55,10 +59,17 @@ public class OrganizationPage {
     private final By locator_textarea_notes = By.xpath("//textarea[@class='oxd-textarea oxd-textarea--active oxd-textarea--resize-vertical']");
     private final By locator_button_save = By.xpath("//button[@type='submit']");
     private final By locator_succes = By.xpath("//div[@class='oxd-toast-content oxd-toast-content--success']");
-    private final By locator_country=By.xpath("//label[text()='Country']");
+    private final By locator_country = By.xpath("//label[text()='Country']");
     private final By locator_button_add = By.xpath("//button[text()=' Add ']");
     private final By locator_direccion_add = By.xpath("(//textarea[@class='oxd-textarea oxd-textarea--active oxd-textarea--resize-vertical'])[1]");
     private final By locator_nota_add = By.xpath("(//textarea[@class='oxd-textarea oxd-textarea--active oxd-textarea--resize-vertical'])[2]");
+
+    private final By group_locator_button_flecha_abajo = By.xpath("//div[@class='org-container']//ul//button[@type='button']");
+    private final By locator_button_edit_unidad = By.xpath("//label[text()='Edit']");
+    private final By group_locator_button_mas = By.xpath("//div[@class='oxd-tree-node-content']//button[3]");
+
+    private final By locator_identificacion_unidad = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
+    private final By locator_nombre_unidad = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
 
 
     public void clickEnOrganization() throws Exception {
@@ -82,7 +93,7 @@ public class OrganizationPage {
         mouse.ClickearJs(locator_button_edit);
 
         accion.hacerScroll(locator_input_name);
-        accion.limpiarCampoyEscribir(locator_input_name,nombre);
+        accion.limpiarCampoyEscribir(locator_input_name, nombre);
 
         /*no funciona
       //  accion.borrarTexto(locator_input_name);
@@ -93,7 +104,7 @@ public class OrganizationPage {
        // teclado.Escribir(locator_input_name,nombre);*/
 
         accion.hacerScroll(locator_number_registration);
-        accion.limpiarCampoyEscribir(locator_number_registration,num);
+        accion.limpiarCampoyEscribir(locator_number_registration, num);
 
         accion.hacerScroll(locator_input_tax);
         accion.limpiarCampoyEscribir(locator_input_tax, String.valueOf(tax));
@@ -105,19 +116,19 @@ public class OrganizationPage {
         accion.limpiarCampoyEscribir(locator_input_fax, String.valueOf(fax));
 
         accion.hacerScroll(locator_input_email);
-        accion.limpiarCampoyEscribir(locator_input_email,email);
+        accion.limpiarCampoyEscribir(locator_input_email, email);
 
         accion.hacerScroll(locator_input_adress1);
-        accion.limpiarCampoyEscribir(locator_input_adress1,direccion1);
+        accion.limpiarCampoyEscribir(locator_input_adress1, direccion1);
 
         accion.hacerScroll(locator_input_adress2);
-        accion.limpiarCampoyEscribir(locator_input_adress2,direccion2);
+        accion.limpiarCampoyEscribir(locator_input_adress2, direccion2);
 
         accion.hacerScroll(locator_input_city);
-        accion.limpiarCampoyEscribir(locator_input_city,ciudad);
+        accion.limpiarCampoyEscribir(locator_input_city, ciudad);
 
         accion.hacerScroll(locator_input_province);
-        accion.limpiarCampoyEscribir(locator_input_province,provincia);
+        accion.limpiarCampoyEscribir(locator_input_province, provincia);
 
         accion.hacerScroll(locator_input_codigo_postal);
         mouse.ClickearJs(locator_input_codigo_postal);
@@ -127,10 +138,10 @@ public class OrganizationPage {
         mouse.ClickearJs(locator_input_country_select);
         accion.clickFlechaAbajoDoble(locator_input_country_select);
 
-       // accion.hacerScroll(locator_textarea_notes);
+        // accion.hacerScroll(locator_textarea_notes);
         //mouse.ClickearJs(locator_textarea_notes);
         //accion.limpiarCampoyEscribir(locator_textarea_notes, notas);
-       // teclado.Escribir(locator_textarea_notes,notas);
+        // teclado.Escribir(locator_textarea_notes,notas);
 
         accion.hacerScroll(locator_button_save);
         mouse.ClickearJs(locator_button_save);
@@ -146,7 +157,7 @@ public class OrganizationPage {
         mouse.ClickearJs(locator_button_save);
     }
 
-    public void agregarLocation(String nombre,String ciudad,String provincia,String codigo_p, String telefono,String fax,String direccion,String notas) throws Exception {
+    public void agregarLocation(String nombre, String ciudad, String provincia, String codigo_p, String telefono, String fax, String direccion, String notas) throws Exception {
         accion.hacerScroll(locator_button_add);
         mouse.ClickearJs(locator_button_add);
         teclado.onEscribir(locator_input_name,nombre);
@@ -162,4 +173,29 @@ public class OrganizationPage {
         mouse.ClickearJs(locator_button_save);
 
     }
+
+    public void clickEnEdit() throws Exception {
+        accion.hacerScroll(locator_button_edit_unidad);
+        mouse.ClickearJs(locator_button_edit_unidad);
+    }
+
+    public void agregarUnidadATodos() throws Exception {
+        try {
+            List<WebElement> elementosLapiz = Session.getInstance().getWebDriver().findElements(group_locator_button_mas);
+            for (int i = 1; i <=elementosLapiz.size(); i++) {
+                WebElement elemento_lapiz = Session.getInstance().getWebDriver().findElement(By.xpath("(//div[@class='oxd-tree-node-content']//button[3])[" + i + "]"));
+                accion.hacerScroll(elemento_lapiz);
+                elemento_lapiz.click();
+                accion.hacerScroll(locator_identificacion_unidad);
+                teclado.onEscribir(locator_identificacion_unidad, cadena.generarStringAlfanumericoAleatorio(7));
+                accion.hacerScroll(locator_nombre_unidad);
+                mouse.ClickearJs(locator_nombre_unidad);
+                teclado.onEscribir(locator_nombre_unidad, cadena.generarStringAlfanumericoAleatorio(4));
+                mouse.ClickearJs(locator_button_save);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

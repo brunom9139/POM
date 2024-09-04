@@ -67,6 +67,16 @@ Característica: Estos son los test de Admin
     Y voy a job paygrades
     Entonces agrego un nuevo paygrade
 
+  @Test @Admin @Job @AgregarPayGradeYAgregaraMoneda
+  Escenario: Agrego paygrade
+    Dado que me logueo "Admin" "admin123"
+    Cuando ingreso en admin
+    Cuando ingreso en job
+    Y voy a job paygrades
+    Y agrego un nuevo paygrade
+    Entonces agrego una moneda
+
+
   @Test @Admin @Job @EditarPayGrade
   Escenario: Editar paygrade
     Dado que me logueo "Admin" "admin123"
@@ -209,3 +219,20 @@ Característica: Estos son los test de Admin
     Y voy a Users
     Y completo los campos con los datos y busco "Griselda Medrano" "GRIKI"
     Entonces verifico que se encuentre el usuario
+
+
+    @Test @Admin @Organization @Structure
+    Escenario: se agregan unidades a la estructura de organizacion
+      Dado que me logueo "Admin" "admin123"
+      Cuando ingreso en admin
+      Cuando igreso en organization
+      Y voy a structure
+      Entonces agrego una unidad a cada estructura
+
+    @Test @Admin @Cualifications @Education
+      Escenario: se booran una x una las forrmaciones
+      Dado que me logueo "Admin" "admin123"
+      Cuando ingreso en admin
+      Cuando ingreso en cualifications
+      Y voy a education
+      Entonces selecciono cada una por una y las borro
