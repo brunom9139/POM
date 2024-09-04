@@ -1,11 +1,13 @@
 package actions;
 
+import factory.Session;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.ConfigReader;
 
 import java.util.List;
+
 
 public class Texto {
 
@@ -18,6 +20,7 @@ public class Texto {
         this.accion = new Acciones(driver);
         this.resaltar = new ElementoResaltado(driver);
     }
+
 
     public boolean compararTextoIgual(By locator, String texto) throws Exception {
         try {
@@ -59,6 +62,7 @@ public class Texto {
         }
     }
 
+
     public boolean validarSiTextoSeEncontro(By locator, String texto)throws Exception {
         boolean encuentra = false;
         List<WebElement> elements = driver.findElements(locator);
@@ -86,5 +90,29 @@ public class Texto {
         }
         return encuentra;*/
     }
+    public int cantidadElementos(By locator)throws Exception {
+        List<WebElement> elementos = driver.findElements(locator);
+        return elementos.size();
+    }
+
+    public String estraerTexto(By locator){
+        WebElement elemento = driver.findElement(locator);
+        return elemento.getText();
+    }
+
+    public int encontrarPosicionTexto(By locator, String texto_a_comparar)throws Exception {
+        List<WebElement> elementos = driver.findElements(locator);
+        int posicionTexto = 1;
+        for (WebElement elemento : elementos) {
+            if(Objects.equals(elemento.getText(), texto_a_comparar)){
+                break;//quiebra, corta
+            }
+            else{
+                posicionTexto++;
+            }
+        }
+        return posicionTexto;
+    }
+
 
 }

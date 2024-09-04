@@ -1,4 +1,4 @@
-package pages.Elements;
+package pages.elements;
 
 import actions.*;
 import org.openqa.selenium.By;
@@ -36,7 +36,7 @@ public class WebTablesPage {
     }
 
     public void buscarTablaWebPage(String texto_a_buscar) throws Exception {
-        teclado.Escribir(locator_input_search_web_tables,texto_a_buscar);
+        teclado.onEscribir(locator_input_search_web_tables,texto_a_buscar);
     }
 
     public void clickEliminarPrimerDatoEncontrado() throws Exception {
@@ -45,7 +45,7 @@ public class WebTablesPage {
 
     public void clickEditarPrimerDatoEncontrado(String nombreEditar) throws Exception {
         mouse.Clickear(locator_button_editar_primera_fila_web_table);
-        teclado.Escribir(locator_input_first_name,nombreEditar);
+        teclado.onEscribir(locator_input_first_name,nombreEditar);
         mouse.Clickear(locator_button_submit_web_tables_edit);
     }
 

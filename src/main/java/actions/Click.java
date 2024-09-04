@@ -46,7 +46,6 @@ public class Click {
         }
     }
 
-
     private void clickearElemento(By locator, boolean usarJs) throws Exception {
         try {
             WebElement elemento = esperar.presente(locator);

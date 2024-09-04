@@ -18,7 +18,7 @@ public class Escribir {
         this.javaScript = new JavaScript(driver);
     }
 
-    public void Escribir(By locator,String texto) throws Exception {
+    public void onEscribir(By locator, String texto) throws Exception {
         escribirTexto(locator,texto, false);
     }
 
