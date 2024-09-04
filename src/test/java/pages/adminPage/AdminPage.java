@@ -31,10 +31,10 @@ public class AdminPage {
     }
 
     public void cargoLosDatosEnAdmin(String nombre,String employee ) throws Exception {
-        teclado.Escribir(locator_input_username,nombre);
+        teclado.onEscribir(locator_input_username,nombre);
         mouse.Clickear(locator_select_user_role);
         acciones.flechaAbajoDoble();
-        teclado.Escribir(locator_input_emmployee,employee);
+        teclado.onEscribir(locator_input_emmployee,employee);
         esperar_tiempo.esperar(2);
         acciones.clickFlechaAbajo(locator_input_emmployee);
         acciones.clickFlechaAbajo(locator_select_status);
@@ -46,10 +46,10 @@ public class AdminPage {
         Assert.assertTrue(mensaje);
     }
     public void cargoLosDatosEnAdminyResetear(String nombre,String employee ) throws Exception {
-        teclado.Escribir(locator_input_username,nombre);
+        teclado.onEscribir(locator_input_username,nombre);
         mouse.Clickear(locator_select_user_role);
         acciones.flechaAbajoDoble();
-        teclado.Escribir(locator_input_emmployee,employee);
+        teclado.onEscribir(locator_input_emmployee,employee);
         esperar_tiempo.esperar(2);
         acciones.clickFlechaAbajo(locator_input_emmployee);
         acciones.clickFlechaAbajo(locator_select_status);

@@ -1,13 +1,9 @@
 package pages.claimPage;
 
 import actions.*;
-import factory.Session;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import utils.CadenaCaracteres;
-
-import java.util.List;
 
 
 public class ClaimPage {
@@ -55,7 +51,7 @@ public class ClaimPage {
     }
 
     public void agregarReclamo() throws Exception {
-        teclado.Escribir(locator_employeet_name,"A");
+        teclado.onEscribir(locator_employeet_name,"A");
         esperar_tiempo.esperar(5);
         accion.flechaAbajoDoble();
 
@@ -82,9 +78,9 @@ public class ClaimPage {
 
         esperar_tiempo.esperar(5);
         mouse.Clickear(locator_amount);
-        teclado.Escribir(locator_amount,expensa);
+        teclado.onEscribir(locator_amount,expensa);
 
-        teclado.Escribir(locator_note,"delivery por la noche");
+        teclado.onEscribir(locator_note,"delivery por la noche");
         mouse.Clickear(locator_button_save);
 
 

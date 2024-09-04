@@ -87,7 +87,7 @@ public class PimPage {
     private final By id_locator = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
     public void buscarEmpleadoPorId(String ID) throws Exception {
         accion.hacerScroll(locator_label);
-        teclado.Escribir(locator_input_search_id,ID);
+        teclado.onEscribir(locator_input_search_id,ID);
         accion.hacerScroll(locator_buton_submit);
         mouse.ClickearJs(locator_buton_submit);
     }
@@ -130,9 +130,9 @@ public class PimPage {
         nombre_usuario = RandomNameGenerator.generateAnimalStringWithNumber();
         String contra = cadenaCaracteres.generarStringAlfanumericoAleatorio(12);
 
-        teclado.Escribir(locator_input_name1, primer_nombre_empleado);
-        teclado.Escribir(locator_input_name2, segundo_nombre_empleado);
-        teclado.Escribir(locator_input_apellido, apellido_empleado);
+        teclado.onEscribir(locator_input_name1, primer_nombre_empleado);
+        teclado.onEscribir(locator_input_name2, segundo_nombre_empleado);
+        teclado.onEscribir(locator_input_apellido, apellido_empleado);
 
         mouse.Clickear(locator_button_edit_redondo);
 
@@ -159,7 +159,7 @@ public class PimPage {
         mouse.Clickear(locator_button_user_management);
         mouse.Clickear(locator_button_users);
 
-        teclado.Escribir(locator_name_user_search,nombre_usuario);
+        teclado.onEscribir(locator_name_user_search,nombre_usuario);
         esperar_tiempo.esperar(5);
 
        // accion.flechaAbajo();
@@ -181,7 +181,7 @@ public class PimPage {
 
     public void buscarEmpleadoPorName(String nombre) throws Exception {
         accion.hacerScroll(locator_input_buscador_name);
-        teclado.Escribir(locator_input_buscador_name,nombre);
+        teclado.onEscribir(locator_input_buscador_name,nombre);
     }
 
     public void clickEnLapiz() throws Exception {

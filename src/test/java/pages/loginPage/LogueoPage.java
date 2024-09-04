@@ -32,8 +32,8 @@ public class LogueoPage {
 
 
     public void cargarCampos(String nombre, String contrasena) throws Exception {
-        teclado.Escribir(locator_input_name,nombre);
-        teclado.Escribir(locator_input_pasword,contrasena);
+        teclado.onEscribir(locator_input_name,nombre);
+        teclado.onEscribir(locator_input_pasword,contrasena);
         mouse.Clickear(locator_button);
     }
 

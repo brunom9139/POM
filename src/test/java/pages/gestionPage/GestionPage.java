@@ -40,8 +40,8 @@ public class GestionPage {
 
     public void buscarUsuario(String nombre,String nombre_trabajo) throws Exception {
         //mouse.ClickearJs(locator_input_nombre_usuario,nombre);
-        teclado.Escribir(locator_input_nombre_usuario,nombre);
-        teclado.Escribir(locator_input_nombre_trabajo,nombre_trabajo);
+        teclado.onEscribir(locator_input_nombre_usuario,nombre);
+        teclado.onEscribir(locator_input_nombre_trabajo,nombre_trabajo);
         mouse.ClickearJs(locator_button_search);
     }
 

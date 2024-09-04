@@ -4,12 +4,8 @@ import actions.Acciones;
 import actions.Click;
 import actions.Escribir;
 import actions.Texto;
-import org.openqa.selenium.Keys;
-import factory.Session;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import utils.CadenaCaracteres;
 
 public class OrganizationPage {
@@ -141,11 +137,11 @@ public class OrganizationPage {
     }
 
     public void  buscarLocation(String nombre,String ciudad, String letra) throws Exception {
-        teclado.Escribir(locator_input_name_location_search,nombre);
-        teclado.Escribir(locator_input_city_location_search,ciudad);
+        teclado.onEscribir(locator_input_name_location_search,nombre);
+        teclado.onEscribir(locator_input_city_location_search,ciudad);
         accion.hacerScroll(locator_input_country_select);
         mouse.ClickearJs(locator_input_country_select);
-        teclado.Escribir(locator_input_country_select,letra);
+        teclado.onEscribir(locator_input_country_select,letra);
         //apretar enter
         mouse.ClickearJs(locator_button_save);
     }
@@ -153,15 +149,15 @@ public class OrganizationPage {
     public void agregarLocation(String nombre,String ciudad,String provincia,String codigo_p, String telefono,String fax,String direccion,String notas) throws Exception {
         accion.hacerScroll(locator_button_add);
         mouse.ClickearJs(locator_button_add);
-        teclado.Escribir(locator_input_name,nombre);
-        teclado.Escribir(locator_input_city_add,ciudad);
-        teclado.Escribir(locator_input_province_add,provincia);
-        teclado.Escribir(locator_input_codigo_postal_add,codigo_p);
-        teclado.Escribir(locator_input_phone_add,telefono);
+        teclado.onEscribir(locator_input_name,nombre);
+        teclado.onEscribir(locator_input_city_add,ciudad);
+        teclado.onEscribir(locator_input_province_add,provincia);
+        teclado.onEscribir(locator_input_codigo_postal_add,codigo_p);
+        teclado.onEscribir(locator_input_phone_add,telefono);
         accion.hacerScroll(locator_input_fax_add);
-        teclado.Escribir(locator_input_fax_add,fax);
-        teclado.Escribir(locator_direccion_add,direccion);
-        teclado.Escribir(locator_nota_add,notas);
+        teclado.onEscribir(locator_input_fax_add,fax);
+        teclado.onEscribir(locator_direccion_add,direccion);
+        teclado.onEscribir(locator_nota_add,notas);
         accion.hacerScroll(locator_button_save);
         mouse.ClickearJs(locator_button_save);
 

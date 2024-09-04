@@ -24,10 +24,10 @@ public class TextBoxPage {
     private final By locator_label_name_validar_carga_formulario = By.xpath("//div[@id='output']//p[1]");
 
     public void completarFormularioTextBox(String fullName,String email, String address1,String address2) throws Exception {
-        teclado.Escribir(locator_input_fullName,fullName);
-        teclado.Escribir(locator_input_email,email);
-        teclado.Escribir(locator_input_address1,address1);
-        teclado.Escribir(locator_input_address2,address2);
+        teclado.onEscribir(locator_input_fullName,fullName);
+        teclado.onEscribir(locator_input_email,email);
+        teclado.onEscribir(locator_input_address1,address1);
+        teclado.onEscribir(locator_input_address2,address2);
         mouse.Clickear(locator_button_subtmit_form_text_box);
     }
 

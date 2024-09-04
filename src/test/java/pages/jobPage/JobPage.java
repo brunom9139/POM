@@ -75,9 +75,9 @@ public class JobPage {
     public void cargarFormularioJobTitle(String titulo,String descripcion,String nota) throws Exception {
         mouse.Clickear(locator_button_job_titles);
         mouse.ClickearJs(locator_button_add);
-        teclado.Escribir(locator_input_title,titulo);
-        teclado.Escribir(locator_input_description,descripcion);
-        teclado.Escribir(locator_input_note, nota);
+        teclado.onEscribir(locator_input_title,titulo);
+        teclado.onEscribir(locator_input_description,descripcion);
+        teclado.onEscribir(locator_input_note, nota);
         mouse.Clickear(locator_button_save);
     }
 
@@ -127,7 +127,7 @@ public class JobPage {
 
                 String texto = cadena.generarStringAlfanumericoAleatorio(10);
                 mouse.Clickear(localizadorNombreClick);
-                teclado.Escribir(localizadorNombreFinal,texto);
+                teclado.onEscribir(localizadorNombreFinal,texto);
 
                 mouse.Clickear(localizadorGuardo);
                 mouse.Clickear(localizadorCancelar);
@@ -191,21 +191,21 @@ public class JobPage {
     public void clickEnAgregarTitle() throws Exception {
         accion.hacerScroll(locator_button_add);
         mouse.ClickearJs(locator_button_add);
-        teclado.Escribir(locator_input_name,"Programador");
+        teclado.onEscribir(locator_input_name,"Programador");
         mouse.Clickear(locator_button_save);
     }
 
     public void clickEnAgregarPayGrade() throws Exception {
         accion.hacerScroll(locator_button_add);
          mouse.ClickearJs(locator_button_add);
-        teclado.Escribir(locator_input_name,"Griselda");
+        teclado.onEscribir(locator_input_name,"Griselda");
         mouse.Clickear(locator_button_save);
     }
 
     public void clickEnAgregarEstado(String estado) throws Exception {
         accion.hacerScroll(locator_button_add);
         mouse.ClickearJs(locator_button_add);
-        teclado.Escribir(locator_input_name,estado);
+        teclado.onEscribir(locator_input_name,estado);
         mouse.Clickear(locator_button_save);
     }
 
